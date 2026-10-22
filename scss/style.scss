@@ -1,0 +1,30 @@
+/* Global */
+/* ------------------------------------ */
+@import "global/_normalize.scss";
+@import "global/_mixins";
+@import "global/_variables";
+@import "global/_fonts";
+@import "global/_reboot";
+@import "global/_container";
+@import "global/_visually-hidden";
+
+/* Blocks */
+/* ------------------------------------ */
+@import "blocks/_btn";
+@import "blocks/_header";
+@import "blocks/_header-desktop";
+@import "blocks/_header_container";
+@import "blocks/_footer";
+@import "blocks/_preloader";
+@import "blocks/_start";
+@import "blocks/_progress-bar";
+@import "blocks/_answer";
+@import "blocks/_question";
+@import "blocks/_result";
+@import "blocks/_profile";
+@import "blocks/_check-list";
+@import "blocks/_qr";
+@import "blocks/_accordeon";
+@import "blocks/_custom-input";
+@import "blocks/_manual";
+@import "blocks/_light";

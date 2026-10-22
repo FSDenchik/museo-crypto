@@ -1,0 +1,44 @@
+.custom-input {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+
+    &__label {
+        font-size: 12px;
+        line-height: 16px;
+        color: $color-white;
+
+        @include vp-1440 {
+            color: $color-green;
+        }
+    }
+
+    &__field {
+        width: 100%;
+        padding: 19px 24px;
+        color: $color-dark-dark;
+        border: 1px solid $color-dark;
+        font-size: 14px;
+        line-height: 18px;
+
+        &.is-error {
+            border-color: #FF0000;
+        }
+
+        @include vp-1440 {
+            border: 1px solid $color-green;
+            background-color: $color-dark;
+            color: $color-green;
+        }
+    }
+
+    #login {
+        background-color: $color-white;
+
+        @include vp-1440 {
+            background-color: $color-dark;
+            color: $color-green;
+        }
+    }
+}

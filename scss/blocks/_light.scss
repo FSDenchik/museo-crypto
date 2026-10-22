@@ -1,0 +1,572 @@
+.light {
+
+    .header__container {
+        background-color: $color-background-light;
+
+
+        &-icon-musey {
+            color: $color-dark-light;
+        }
+
+        &-logo {
+            color: $color-dark-light;
+        }
+
+        &-line {
+            background-color: $color-dark-light;
+        }
+    }
+
+    .start {
+        background-color: $color-background-light;
+        color: $color-dark-light;
+
+        &__title {
+            color: $color-dark-light;
+
+            @include vp-1440 {
+                color: $color-blue-light;
+            }
+        }
+
+        &__text {
+            color: $color-blue-light;
+
+            @include vp-1440 {
+                color: $color-dark-light;
+            }
+        }
+
+        &__text-min {
+            color: $color-dark-light;
+        }
+
+        &__btn {
+            border: 1px solid $color-dark-light;
+            color: $color-dark-light;
+        }
+
+        &__btn--color {
+            background-color: #15141A;
+            color: $color-white;
+            border: none;
+        }
+
+        &__image {
+            display: none;
+
+            &-light {
+                display: block;
+                margin-left: auto;
+            }
+        }
+
+        &__text-time {
+            @include vp-1440 {
+                color: #0B4AF9;
+            }
+        }
+
+        &__desc {
+            @include vp-1440 {
+                color: $color-black;
+            }
+        }
+
+        &__desktop-btn {
+            @include vp-1440 {
+                background-color: $color-dark-light;
+                color: $color-white;
+            }
+        }
+
+        &__btn-icon {
+            @include vp-1440 {
+                color: $color-white;
+            }
+        }
+    }
+
+    .manual {
+        background-color: $color-background-light;
+        color: $color-dark-light;
+
+        &__title {
+            color: $color-blue-light;
+
+            @include vp-1440 {
+                color: $color-dark-light;
+            }
+        }
+
+        &__item-title {
+            color: $color-dark-light;
+        }
+
+        &__text-time {
+            color: $color-dark-light;
+        }
+
+        &__desc {
+            color: $color-dark-light;
+        }
+
+        &__text {
+            color: $color-dark-light;
+            border: 1px solid $color-blue-light;
+
+            @include vp-1440 {
+                border: none;
+                color: $color-blue-light;
+            }
+        }
+
+        &__btn {
+            background-color: #15141A;
+            color: $color-white;
+
+            @include vp-1440 {
+                background-color: $color-dark-light;
+            }
+        }
+
+        &__img {
+            display: none;
+        }
+
+        &__img-light {
+            display: block;
+        }
+    }
+
+    .progress-bar {
+        color: $color-dark-light;
+
+        &__icon {
+            display: none;
+
+            &-light {
+                display: block;
+            }
+        }
+    }
+
+    .question {
+        background-color: $color-background-light;
+
+        &__title {
+            color: $color-dark-light;
+
+            &-color {
+                color: $color-blue-light;
+            }
+        }
+
+        &__text {
+            color: $color-dark-light;
+
+            &-number {
+                color: $color-dark-light;
+            }
+
+            &-security {
+                color: $color-dark-light;
+                border: 1px solid $color-dark-light;
+            }
+
+            &-people {
+                color: $color-dark-light;
+                border: 1px solid $color-dark-light;
+            }
+
+            &-color {
+                color: $color-blue-light;
+            }
+        }
+
+        &__desktop {
+            @include vp-1440 {
+                background-color: $color-white;
+            }
+        }
+
+        &__answer {
+            background-color: #CFD7EB;
+            color: $color-dark-light;
+
+            &:hover {
+                background-color: #CFD7EB;
+                border-color: transparent;
+                color: $color-dark-light;
+            }
+
+            &:has(input[type="radio"]:checked),
+            &:has(input[type="radio"]:checked):hover {
+                background-color: $color-blue-light;
+                border-color: transparent;
+                color: $color-white;
+            }
+        }
+
+        &__check {
+            background-color: $color-dark-light;
+            color: $color-white;
+        }
+
+        &__img {
+            display: none;
+        }
+
+        &__img-light {
+            display: block;
+        }
+
+        &__image {
+            display: none;
+
+            &-light {
+                display: block;
+            }
+        }
+
+        &__btn-dialog {
+            background-color: $color-dark-light;
+            color: $color-white;
+        }
+    }
+
+    .answer {
+        background-color: $color-background-light;
+        color: $color-dark-light;
+
+        &__title {
+            color: $color-dark-light;
+        }
+
+        &__text {
+            color: $color-dark-light;
+        }
+
+        &__btn {
+            background-color: $color-dark-light;
+            color: $color-white;
+        }
+    }
+
+    .question__container-title {
+        color: $color-dark-light;
+
+        @include vp-1440 {
+            color: $color-green;
+        }
+    }
+
+    .accordeon {
+        &__btn {
+            background-color: #CBCBCB;
+        }
+
+        &__list {
+            background-color: #CBCBCB;
+
+            @include vp-1440 {
+                background-color: $color-dark;
+            }
+        }
+    }
+
+    .custom-input {
+        &__label {
+            color: $color-dark-light;
+
+            @include vp-1440 {
+                color: $color-green;
+            }
+        }
+    }
+
+    .header-desktop__number {
+        @include vp-1440 {
+            color: $color-black;
+        }
+    }
+
+    .header-desktop__text {
+        @include vp-1440 {
+            color: $color-black;
+        }
+    }
+}
+
+.light {
+
+    .result,
+    .profile,
+    .check-list,
+    .qr {
+        background-color: $color-background-light;
+        color: $color-dark-light;
+    }
+
+    .result {
+
+        &__number,
+        &__desc,
+        &__procent-head {
+            color: $color-dark-light;
+        }
+
+        &__desc-mobile {
+            color: $color-dark-light;
+        }
+
+        &__text {
+            color: $color-blue-light;
+        }
+
+        &__number-color {
+            color: $color-blue-light;
+        }
+
+        &__procent-track {
+            background-color: #B4B4B8;
+        }
+
+        &__procent-value {
+            background-color: $color-blue-light;
+        }
+
+        &__btn {
+            border-color: $color-dark-light;
+            color: $color-dark-light;
+
+            &--color {
+                border-color: $color-dark-light;
+                background-color: $color-dark-light;
+                color: $color-white;
+            }
+        }
+
+    }
+
+    .profile,
+    .check-list,
+    .qr {
+        &__title {
+            color: $color-blue-light;
+        }
+
+        &__text,
+        &__desc,
+        &__adress {
+            color: $color-dark-light;
+        }
+
+        &__btn {
+            background-color: $color-dark-light;
+            color: $color-white;
+        }
+    }
+
+    .profile__btn--retry {
+        background-color: transparent;
+        border-color: $color-dark-light;
+        color: $color-dark-light;
+    }
+
+    .check-list__wrap {
+        background-color: #CFD7EB;
+    }
+
+    .check-list__icon {
+        color: #0B4AF9;
+    }
+
+    .question__check {
+        @include vp-1440 {
+            background-color: $color-green;
+            color: $color-dark;
+        }
+    }
+
+    .header__container-btn {
+        @include vp-1440 {
+            color: $color-black;
+        }
+    }
+    
+    .answer__text-counter {
+        @include vp-1440 {
+            color: $color-blue-light;
+        }
+    }
+}
+
+// Десктопная палитра исходной светлой версии сохранена отдельно от тёмной базы.
+@include vp-1440 {
+    .light {
+        .header-desktop {
+            color: $color-dark-light;
+        }
+
+        .header-desktop__icon-skillbox {
+            color: $color-dark-light;
+        }
+
+        .header-desktop__line {
+            background-color: $color-dark;
+        }
+
+        .question__text-number-desktop {
+            color: $color-black;
+        }
+
+        .question__help {
+            color: $color-green;
+            border-color: $color-green;
+        }
+
+        .custom-input__field {
+            border-color: $color-green;
+            color: $color-green;
+        }
+
+        .custom-input #login {
+            color: $color-green;
+        }
+
+        .accordeon__list.is-active {
+            border-color: $color-green;
+        }
+
+        .accordeon__text {
+            color: $color-green;
+        }
+
+        .question__list {
+            border-color: $color-dark-light;
+        }
+
+        .question__item:not([data-question="3"]) {
+            .question__desktop {
+                border: 2px solid $color-blue-light;
+            }
+
+            .question__title,
+            .question__desktop-left .question__title-color,
+            .question__text {
+                color: $color-dark-light;
+            }
+
+            .question__answer {
+                border-color: $color-dark-light;
+                background-color: $color-white;
+                color: $color-dark-light;
+
+                &::before {
+                    background-color: $color-white;
+                    color: $color-dark-light;
+                }
+
+                &:hover {
+                    border-color: transparent;
+                    background-color: #CFD7EB;
+                    color: $color-dark-light;
+                }
+
+                &:has(input[type="radio"]:checked),
+                &:has(input[type="radio"]:checked):hover {
+                    border-color: transparent;
+                    background-color: $color-blue-light;
+                    color: $color-white;
+                }
+
+                &:not(:has(input[type="radio"]:checked))::before {
+                    color: $color-dark-light;
+                }
+            }
+
+            .question__check,
+            .question__btn-dialog {
+                background-color: $color-dark-light;
+                color: $color-white;
+            }
+        }
+
+        .question__item[data-question="3"] .question__check {
+            background-color: $color-green;
+            color: $color-dark;
+        }
+
+        .result__text-desktop {
+            color: $color-black;
+        }
+
+        .result__btn:not(.result__btn--color) {
+            border-color: $color-dark-light;
+            color: $color-dark-light;
+        }
+
+        .profile__title-desktop {
+            color: $color-blue-light;
+        }
+    }
+}
+
+
+// Theme-aware raster assets.
+@include vp-1440 {
+    .light .manual__img-desktop,
+    .light .manual__image,
+    .light .question__img-left:not(.question__img-left-light) { display: none; }
+
+    .light .manual__img-desktop-light,
+    .light .manual__image-light,
+    .light .question__img-left-light { display: block; }
+
+    .light .manual__image-light {
+        position: absolute;
+        right: 133px;
+        bottom: min(250px, calc(100% - 499px - 100px));
+    }
+
+    .light .header-desktop__icon-musey,
+    .light .header-desktop__logo,
+    .light .header-desktop__number,
+    .light .header-desktop__text { color: $color-dark-light; }
+
+    .light .question__check-icon {
+        color: $color-blue-light;
+    }
+
+    .light .question__check-text {
+        color: $color-blue-light;
+    }
+
+    .light .answer__wrap {
+        border-top: 1px solid $color-dark-light;
+        border-bottom: 1px solid $color-dark-light;
+    }
+
+    .light .question__desktop-text {
+        color: $color-black;
+    }
+
+    .light .question__desktop-desc {
+        color: $color-black;
+    }
+
+    .light .question__desktop {
+        border: 2px solid $color-blue-light;
+    }
+
+}
+
+
+.light .preloader__icon-skillbox {
+    color: $color-dark-light;
+}
+
+.light .header__icon-skillbox {
+    color: $color-dark-light;
+}

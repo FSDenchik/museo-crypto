@@ -1,0 +1,133 @@
+.answer {
+    background-color: $color-background;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 288px;
+    padding: 23px 16px 16px;
+    
+    @include vp-1440 {
+        width: 1000px;
+        height: 700px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        box-shadow: 0px 4px 54px 0px rgba(0, 0, 0, 0.31);
+        padding: 80px 40px;
+    }
+
+    display: none;
+
+    &.is-active {
+        display: flex;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include vp-1440 {
+            padding: 48px 0;
+            border-top: 1px solid $color-blue;
+            border-bottom: 1px solid $color-blue;
+            gap: 48px;
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-size: 18px; 
+        line-height: 24px;
+        color: $color-white;
+        font-weight: 600;
+        margin: 0;
+        text-align: center;
+
+        @include vp-1440 {
+            font-size: 32px;
+            font-weight: 400;
+            font-family: "Halvar Breit Rg", "Arial", sans-serif;
+            text-align: left;
+        }
+    }
+
+    &__img {
+        display: none;
+
+        @include vp-1440 {
+            display: block;
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    &__wrap-text {
+        @include vp-1440 {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 18px;
+        color: $color-white;
+        font-weight: 400;
+        margin: 0 0 auto;
+
+        @include vp-1440 {
+            font-size: 24px;
+            line-height: 40px;
+        }
+    }
+
+    &__text-counter {
+        display: none;
+
+        @include vp-1440 {
+            display: block;
+            font-size: 24px;
+            line-height: 40px;
+            font-weight: 400;
+            color: $color-blue;
+        }
+    }
+
+    &__wrap-desktop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__btn {
+        background-color: $color-blue;
+        color: $color-background;
+        border: none;
+        font-weight: 600;
+        padding: 18px 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        @include vp-1440 {
+            width: 440px;
+            min-height: 84px;
+            padding: 24px 0;
+            font-size: 24px;
+            line-height: 36px;
+            font-weight: 400;
+            font-family: "Halvar Breit Rg", "Arial", sans-serif;
+            text-transform: uppercase;
+        }
+    }
+}

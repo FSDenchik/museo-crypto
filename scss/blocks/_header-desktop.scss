@@ -1,0 +1,95 @@
+.header-desktop {
+    display: none;
+
+    @include vp-1440 {
+        display: flex;
+        justify-content: space-between;
+        padding: 32px 40px;
+        align-items: center;
+    }
+
+    &__wrap {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    &__icon-musey {
+        width: 86px;
+        height: 55px;
+    }
+
+    &__line {
+        height: 53px;
+        display: block;
+        width: 1px;
+        background-color: $color-white;
+        z-index: 3;
+        margin-bottom: 4px;
+    }
+
+    &__wrap-new {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    &__logo {
+        width: 102px;
+        height: 18px;
+    }
+
+    &__icon-skillbox {
+        width: 60px;
+        height: 14px;
+        color: $color-white;
+    }
+
+    &__number {
+        font-family: "Halvar Breit Rg", Arial, sans-serif;
+        font-size: 15px;
+        line-height: 18px;
+        text-transform: uppercase;
+        width: 170px;
+
+        @include vp-1440 {
+            color: $color-white;
+        }
+    }
+
+    &__text {
+        font-family: "Halvar Breit Rg", Arial, sans-serif;
+        font-size: 15px;
+        line-height: 18px;
+        text-transform: uppercase;
+
+        @include vp-1440 {
+            color: $color-white;
+        }
+    }
+
+    &__progress {
+        width: 675px;
+        height: 32px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        gap: 32px;
+        align-items: center;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 0%;
+            background-color: $color-blue;
+        }
+    }
+}
+
+@include vp-1440 {
+    .header-desktop {
+        color: $color-white;
+    }
+}

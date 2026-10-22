@@ -1,0 +1,104 @@
+.header__container {
+    // display: none;
+
+    background-color: $color-background;
+    margin: 0 auto 24px;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    justify-content: start;
+    position: relative;
+    width: 100%;
+    padding-left: 20px;
+
+    @include vp-1440 {
+        justify-content: start;
+        padding: 0 40px 20px;
+        margin: 0 auto 60px;
+    }
+
+    &-btn {
+        display: none;
+
+        @include vp-1440 {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            font-size: 24px;
+            width: 192px;
+            height: 28px;
+            position: absolute;
+            right: 40px;
+            top: 14px;
+            z-index: 2;
+            color: $color-white;
+        }
+    }
+
+    &-line {
+        display: block;
+        width: 1px;
+        height: 26px;
+        background-color: $color-white;
+        z-index: 3;
+        margin-bottom: 4px;
+
+        @include vp-1440 {
+            height: 53px;
+        }
+    }
+
+    &-icon-musey {
+        width: 49px;
+        height: 31px;
+        color: $color-white;
+
+        @include vp-1440 {
+            width: 86px;
+            height: 55px;
+        }
+    }
+
+    &-logo {
+        width: 46px;
+        height: 8px;
+        margin-left: 2px;
+        color: $color-white;
+
+        @include vp-1440 {
+            width: 102px;
+            height: 18px;
+            z-index: 2;
+        }
+    }
+
+    &-text {
+        display: block;
+        font-weight: 500;
+        font-size: 14px;
+        color: $color-white;
+    }
+
+    &-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+    }
+}
+
+// @include vp-1440 {
+//     .header__container {
+//         background-color: $color-dark;
+//     }
+// }
+
+.preloader__icon-skillbox {
+    color: $color-white;
+}
+
+.header__icon-skillbox {
+    color: $color-white;
+}

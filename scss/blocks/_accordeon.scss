@@ -1,0 +1,63 @@
+.accordeon {
+    margin-bottom: 16px;
+    // display: none;
+
+    @include vp-1440 {
+        display: none;
+    }
+
+    &__btn {
+        display: flex;
+        width: 100%;
+        color: $color-text-blue;
+        padding: 14px 0;
+        gap: 19px;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-white;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__list {
+        display: none;
+
+        &.is-active {
+            margin: 0;
+            padding: 16px;
+            list-style-type: none;
+            background-color: $color-white;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        @include vp-1440 {
+            &.is-active {
+                width: 523px;
+                border: 1px solid $color-green;
+                padding: 40px;
+                background-color: $color-dark;
+                gap: 16px;
+            }
+        }
+    }
+
+    &__text {
+        margin: 0;
+        color: $color-black;
+        width: 100%;
+        font-size: 14px;
+        line-height: 18px;
+
+        @include vp-1440 {
+            color: $color-green;
+        }
+
+        span {
+            font-weight: 600;
+        }
+    }
+}

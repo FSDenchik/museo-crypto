@@ -1,0 +1,33 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $ff-main;
+  font-style: normal;
+  font-weight: 400;
+  color: $color-text-blue;
+  margin: 0;
+  padding: 0;
+  background-color: $color-white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+img {
+  display: block;
+  object-fit: cover;
+  height: auto;
+}
+
+a {
+  color: $color-text-blue;
+  text-decoration: none;
+}

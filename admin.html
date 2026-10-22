@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Статистика прохождений — Museo de crypto</title>
+  <style>
+    @font-face{font-family:Inter;src:url("fonts/Inter-Regular.woff2") format("woff2"),url("fonts/Inter-Regular.woff") format("woff");font-weight:400;font-style:normal;font-display:swap}
+    @font-face{font-family:Inter;src:url("fonts/Inter-Medium.woff2") format("woff2"),url("fonts/Inter-Medium.woff") format("woff");font-weight:500;font-style:normal;font-display:swap}
+    @font-face{font-family:Inter;src:url("fonts/Inter-SemiBold.woff2") format("woff2"),url("fonts/Inter-SemiBold.woff") format("woff");font-weight:600;font-style:normal;font-display:swap}
+    @font-face{font-family:Halvar;src:url("fonts/HalvarBreit-Rg.woff2") format("woff2"),url("fonts/HalvarBreit-Rg.woff") format("woff");font-weight:400;font-style:normal;font-display:swap}
+    @font-face{font-family:Halvar;src:url("fonts/HalvarBreit-Lt.woff2") format("woff2"),url("fonts/HalvarBreit-Lt.woff") format("woff");font-weight:300;font-style:normal;font-display:swap}
+
+    :root{
+      --page:#e9e9ef;--surface:#fff;--surface-alt:#f6f6f8;--text:#00001a;--muted:#929292;--border:#929292;
+      --strong-border:#000;--section:#cbd5ee;--accent:#0b4af9;--chart-soft:#c4e5ed;--chart-muted:#aeb0b5;
+      --danger:#7c3030;--shadow:0 0 0 transparent
+    }
+    @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+      --page:#15141a;--surface:#2a2a2a;--surface-alt:#303030;--text:#fff;--muted:#e9e9ef;--border:#e9e9ef;
+      --strong-border:#fff;--section:#2d314d;--accent:#02cefb;--chart-soft:#c4e5ed;--chart-muted:#aeb0b5;--danger:#ff9d9d
+    }}
+    :root[data-theme="light"]{--page:#e9e9ef;--surface:#fff;--surface-alt:#f6f6f8;--text:#00001a;--muted:#929292;--border:#929292;--strong-border:#000;--section:#cbd5ee;--accent:#0b4af9;--chart-soft:#c4e5ed;--chart-muted:#aeb0b5}
+    :root[data-theme="dark"]{--page:#15141a;--surface:#2a2a2a;--surface-alt:#303030;--text:#fff;--muted:#e9e9ef;--border:#e9e9ef;--strong-border:#fff;--section:#2d314d;--accent:#02cefb;--chart-soft:#c4e5ed;--chart-muted:#aeb0b5}
+
+    *{box-sizing:border-box}
+    html,body{margin:0;min-width:320px;background:var(--page);color:var(--text);font-family:Inter,Arial,sans-serif}
+    body{font-size:14px}
+    button{font:inherit;color:inherit}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    #admin-app{display:none;min-height:100vh;background:var(--page)}
+    .app-header{height:127px;padding:20px 40px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;position:relative;min-width:220px}
+    .brand img{width:162px;height:auto;display:block;filter:none}
+    .brand::after{content:"Skillbox";position:absolute;left:82px;top:44px;font-size:12px;line-height:1}
+    :root[data-theme="dark"] .brand img{filter:invert(1)}
+    .brand-divider{position:absolute;left:72px;top:-8px;height:54px;width:1px;background:currentColor;opacity:.8}
+    .logout{color:var(--text);display:flex;align-items:center;gap:12px;text-transform:uppercase;font:400 24px/1 Halvar,sans-serif;text-decoration:none;white-space:nowrap}
+    .logout::after{content:'→';font-family:Inter;font-size:30px;line-height:0;transform:translateY(-2px)}
+    .page-heading{max-width:1368px;margin:0 auto 0;padding:0 0 20px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .page-heading h1{margin:0;text-transform:uppercase;font:400 32px/1 Halvar,sans-serif;letter-spacing:.12em}
+    .toolbar{display:flex;gap:24px;align-items:center}
+    .control{height:50px;border:1px solid var(--strong-border);background:transparent;display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 24px;text-transform:uppercase;cursor:pointer}
+    .date-icon{width:16px;height:16px}.chevron-icon{width:16px;height:9px}.export-icon{width:20px;height:20px;object-fit:contain}
+    @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .export-icon{filter:invert(1)}}
+    :root[data-theme="dark"] .export-icon{filter:invert(1)}
+    .date-control{background:#fff;color:#000;font:400 12px/36px Halvar,sans-serif;min-width:138px;white-space:nowrap}
+    .export-control{font:400 12px/36px Halvar,sans-serif;white-space:nowrap}
+    .control .icon{font-family:Inter;font-size:16px;line-height:1}
+    .content{width:min(1368px,calc(100% - 48px));margin:0 auto;padding-bottom:28px}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-bottom:14px}
+    .stat-card{min-height:105px;background:var(--surface);border:1px solid var(--border);padding:14px 10px 12px;display:flex;flex-direction:column;justify-content:space-between}
+    .stat-label{font-size:16px;line-height:1.25}
+    .stat-value{font:400 24px/1 Halvar,sans-serif;letter-spacing:.02em;color:var(--text)}
+    @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .stat-value{color:var(--accent)}}
+    :root[data-theme="dark"] .stat-value{color:var(--accent)}
+    .stat-note{font-size:10px;color:var(--muted);line-height:1.25}
+
+    .dashboard-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 14px}
+    .panel{background:var(--surface);border:1px solid var(--border);min-width:0}
+    .panel-heading{margin:0;padding:14px 10px 10px;font-size:16px;line-height:1.2;font-weight:400}
+    .chart-panel{height:184px}
+    .chart-wrap{height:142px;margin:0 10px 10px;position:relative}
+    .chart-wrap canvas{display:block;width:100%;height:100%}
+    .legend{display:flex;gap:16px;align-items:center;font-size:10px;position:absolute;right:10px;top:4px}
+    .legend span,.profile-legend li{white-space:nowrap}
+    .dot{display:inline-block;width:5px;height:5px;border-radius:50%;margin-right:4px;vertical-align:middle;background:var(--accent)}
+    .dot.soft{background:var(--chart-soft)}
+    .dot.gray{background:var(--chart-muted)}
+    .wide-panel{grid-column:1 / -1}
+    .category-panel{height:230px}
+    .category-wrap{height:172px;padding:0 10px 8px;position:relative}
+    .category-wrap canvas{display:block;width:100%;height:100%}
+    .category-foot{text-align:center;font-size:10px;color:var(--muted);margin-top:-2px}
+    .profile-panel{height:184px}
+    .profile-wrap{height:142px;margin:0 10px;position:relative}
+    .profile-wrap canvas{display:block;width:100%;height:100%}
+    .profile-legend{display:none}
+    .errors-panel{min-height:230px}
+    .error-row{padding:0 10px 12px}
+    .error-meta{display:flex;justify-content:space-between;gap:12px;font-size:11px;line-height:1.15;margin-bottom:6px}
+    .error-title{font-weight:600}
+    .error-rate{text-align:right;color:var(--text)}
+    .answers{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+    .answer{border:1px solid var(--border);padding:6px;font-size:10px;line-height:1.2;min-height:47px}
+    .answer strong{display:block;font-weight:400;margin-bottom:4px}
+    .error-more{text-align:right;font-size:10px;padding:0 10px 10px}
+
+    .results-panel{grid-column:1 / -1;min-height:273px;padding:0 10px 10px}
+    .results-header{display:flex;align-items:center;justify-content:space-between;padding:10px 0 8px}
+    .results-title{font-size:16px}
+    .results-title strong{font:400 24px/1 Halvar,sans-serif}
+    .results-header .control{height:28px;padding:4px 10px;font-size:10px;line-height:18px}
+    .results-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:10px}
+    .results-table th{text-align:left;font-weight:400;color:var(--muted);padding:4px 4px 6px}
+    .results-table td{padding:4px;border-top:1px solid color-mix(in srgb,var(--border),transparent 65%);vertical-align:middle;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .results-table th:nth-child(1){width:12%}.results-table th:nth-child(2){width:13%}.results-table th:nth-child(3){width:9%}.results-table th:nth-child(4){width:8%}.results-table th:nth-child(5){width:21%}.results-table th:nth-child(6){width:37%}
+    .category-tags{display:flex;gap:4px;flex-wrap:nowrap}
+    .tag{border:1px solid var(--border);padding:2px 4px;line-height:1;display:inline-block}
+    .pagination{display:flex;align-items:center;justify-content:space-between;font-size:10px;padding:10px 0 0}
+    .pagination-actions{display:flex;gap:24px;font-size:16px}
+
+    .mobile-status,.mobile-only,.mobile-collection,.mobile-bottom-export{display:none}
+
+    @media (max-width:767px){
+      body{font-size:14px}
+      #admin-app{min-height:100vh}
+      .app-header{display:none}
+      .mobile-status{display:flex;height:54px;padding:21px 16px 0;align-items:flex-start;justify-content:space-between;font-weight:600;font-size:17px}
+      .mobile-status .signals{font-size:14px;letter-spacing:2px}
+      .page-heading{display:block;width:auto;margin:24px 20px 0;padding:0}
+      .page-heading h1{display:none}
+      .toolbar{display:flex;flex-direction:column;gap:14px;align-items:stretch}
+      .control{height:50px;width:100%;padding:12px 16px}
+      .date-control{justify-content:center;gap:16px}
+      .date-icon{content:url("images/admin-mobile-calendar.svg")}.chevron-icon{content:url("images/admin-mobile-chevron.svg");height:16px}.export-icon{content:url("images/admin-mobile-export.svg");width:16px;height:16px}
+      :root[data-theme="dark"] .export-icon{filter:invert(1)}
+      .export-control{justify-content:center;background:transparent}
+      .content{width:auto;margin:0 20px;padding-bottom:20px}
+      .section{margin-top:24px}
+      .section-toggle{height:50px;border:0;background:var(--section);color:#00001a;width:100%;font:400 10px/1 Inter;display:flex;align-items:center;justify-content:center;gap:18px;text-transform:uppercase;cursor:pointer}
+      .section-toggle::after{content:'⌄';font-size:20px;line-height:10px;transform:translateY(-2px)}
+      .section-content{margin-top:16px}
+      .section.is-collapsed .section-content{display:none}
+      .dashboard-grid .section:first-child{margin-top:12px}
+      .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0}
+      .stat-card{min-height:128px;padding:16px 8px 14px;text-align:center;justify-content:space-between}
+      .stat-label{font-size:16px;line-height:1.1}
+      .stat-value{font-size:24px}
+      .stat-note{font-size:12px;line-height:1.25}
+      .dashboard-grid{display:block}
+      .dashboard-grid .panel{margin-bottom:24px;border:0;background:transparent}
+      .dashboard-grid .chart-panel .section-content,.dashboard-grid .profile-panel .section-content,.dashboard-grid .category-panel .section-content{border:1px solid color-mix(in srgb,var(--border),transparent 35%);background:var(--surface)}
+      .panel{border-color:color-mix(in srgb,var(--border),transparent 35%)}
+      .chart-panel,.profile-panel,.category-panel{height:auto}
+      .panel-heading{font-size:16px;text-align:center;padding:16px 10px 10px}
+      .chart-wrap{height:307px;margin:0 16px 16px}
+      .legend{position:static;display:flex;flex-direction:column;align-items:flex-start;gap:7px;font-size:12px;padding:0 6px 4px}
+      .profile-wrap{height:180px;margin:0 16px}
+      .profile-legend{display:flex;flex-direction:column;gap:10px;list-style:none;margin:0;padding:0 30px 18px;font-size:12px}
+      .category-wrap{height:240px;padding:0 16px 4px}
+      .category-foot{font-size:12px;margin:0 0 16px}
+      .errors-panel{border:0;background:transparent;min-height:0}
+      .errors-panel .panel-heading{display:none}
+      .error-row{padding:0 0 40px}
+      .error-meta{font-size:16px;margin-bottom:12px}
+      .error-rate{color:var(--muted);font-size:14px;font-weight:400}
+      .error-question{font-size:16px;line-height:1.2;margin:0 0 12px}
+      .answers{display:block}
+      .answer{font-size:16px;line-height:1.18;min-height:0;margin:0 0 8px;padding:8px 12px;background:transparent;border-color:color-mix(in srgb,var(--border),transparent 55%)}
+      .answer strong{font-size:16px;margin-bottom:6px}
+      .error-more{display:none}
+      .results-panel{border:0;background:transparent;padding:0;min-height:0}
+      .results-panel .results-header{display:none}
+      .results-table{display:none}
+      .mobile-collection{display:block}
+      .mobile-result-card{border:1px solid color-mix(in srgb,var(--border),transparent 45%);padding:8px 10px;margin-bottom:4px;font-size:14px}
+      .mobile-result-card:not(:first-child) .mobile-tags{display:none}
+      .mobile-result-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:4px 12px}
+      .mobile-result-label{display:block;color:var(--muted);font-size:12px;margin-bottom:4px}
+      .mobile-result-value{display:flex;align-items:center;gap:6px;line-height:1.25}
+      .mobile-result-profile{grid-column:1 / -1;padding-top:2px}
+      .mobile-result-profile .mobile-result-value{gap:8px}
+      .mobile-tags{grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:1px}
+      .mobile-tags .tag{text-align:center;padding:2px;font-size:12px}
+      .pagination{font-size:14px;padding:14px 2px 22px}
+      .pagination-actions{font-size:20px;gap:24px}
+      .mobile-bottom-export{display:flex;width:100%;height:50px;background:transparent;border:1px solid var(--strong-border);align-items:center;justify-content:center;gap:16px;text-transform:uppercase;font:600 12px/1 Inter}
+    }
+    .date-control{background:#fff;color:#000}.date-control span{color:#000}
+    .pagination-actions span{cursor:pointer}
+    @media (min-width:1101px){
+      .page-heading{height:82px;max-width:1369px;padding-bottom:0}
+      .content{width:min(1369px,calc(100% - 80px))}
+      .stats-grid{gap:24px;margin-bottom:24px}
+      .stat-card{height:175px;padding:18px}
+      .stat-label{font-size:24px;line-height:40px}
+      .stat-value{font-size:32px}
+      .stat-note{font-size:14px;line-height:18px}
+      .dashboard-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+      .chart-panel,.profile-panel{grid-column:span 2;height:307px}
+      .category-panel{grid-column:span 1;height:382px}
+      .errors-panel{grid-column:span 3;height:382px}
+      .panel-heading{font-size:24px;line-height:40px;padding:18px 16px 8px}
+      .chart-wrap,.profile-wrap{height:230px;margin:0 16px}
+      .category-wrap{height:256px;padding:0 16px}
+      .category-foot{font-size:14px;margin-top:0}
+      .legend{font-size:14px}
+      .error-row{padding:0 16px 14px}
+      .error-meta{font-size:16px;margin-bottom:8px}
+      .error-question{font-size:16px;margin:0 0 8px}
+      .answer{font-size:14px;min-height:74px;padding:8px}
+      .error-more{font-size:14px;padding:0 16px}
+      .results-panel{min-height:459px;padding:0 16px 16px}
+      .results-header{padding:14px 0 12px}
+      .results-title{font-size:24px}
+      .results-title strong{font-size:32px}
+      .results-table{font-size:14px}
+      .results-table th{padding:8px 4px 12px}
+      .results-table td{padding:6px 4px}
+      .pagination{font-size:14px}
+    }
+    @media (min-width:768px) and (max-width:1100px){.page-heading h1{font-size:24px}.content{width:calc(100% - 48px)}.stat-label{font-size:14px}.results-table{font-size:9px}}
+  </style>
+</head>
+<body>
+  <main id="admin-app" aria-hidden="true">
+    <header class="app-header">
+      <div class="brand"><img src="images/logo-mobile-light@2x.png" alt="Музей криптографии — Бастион — Skillbox"><span class="brand-divider" aria-hidden="true"></span></div>
+      <a class="logout" href="index.html">Выход</a>
+    </header>
+
+    <section class="page-heading" aria-label="Управление отчетом">
+      <h1>Статистика прохождений</h1>
+      <div class="toolbar">
+        <button class="control date-control" type="button"><img class="date-icon" src="images/admin-calendar.svg" alt=""><span>01.10.2026 — 15.10.2026</span><img class="chevron-icon" src="images/admin-chevron.svg" alt=""></button>
+        <button class="control export-control" type="button" data-export><span>Экспорт данных</span><img class="export-icon" src="images/admin-export-light.svg" alt=""></button>
+      </div>
+    </section>
+
+    <div class="content">
+      <section class="section stats-section" data-section>
+        <button class="section-toggle mobile-only" type="button">Статистика</button>
+        <div class="section-content">
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-label">Всего прохождений</div><div class="stat-value">180</div><div class="stat-note">Последнее: 23.09, 16:20</div></article>
+            <article class="stat-card"><div class="stat-label">Анонимных сессий</div><div class="stat-value">180</div><div class="stat-note">анонимные сессии,<br>без персональных данных</div></article>
+            <article class="stat-card"><div class="stat-label">Индекс безопасности</div><div class="stat-value">16/22</div><div class="stat-note">мин 5 | макс 22</div></article>
+            <article class="stat-card"><div class="stat-label">Средняя длительность</div><div class="stat-value">6м 28с</div><div class="stat-note">всего 156 мин</div></article>
+          </div>
+        </div>
+      </section>
+
+      <div class="dashboard-grid">
+        <section class="section panel chart-panel" data-section>
+          <button class="section-toggle mobile-only" type="button">Прохождение по дням</button>
+          <div class="section-content"><h2 class="panel-heading">Прохождение по дням</h2><div class="chart-wrap"><canvas id="line-chart" aria-label="График прохождений по дням"></canvas><div class="legend"><span><i class="dot"></i>Сессии</span><span><i class="dot soft"></i>Средний индекс</span></div></div></div>
+        </section>
+        <section class="section panel profile-panel" data-section>
+          <button class="section-toggle mobile-only" type="button">Распределение по профилям</button>
+          <div class="section-content"><h2 class="panel-heading">Распределение по профилям</h2><div class="profile-wrap"><canvas id="profile-chart" aria-label="Распределение результатов по профилям"></canvas></div><ul class="profile-legend"><li><i class="dot" style="background:#cbd5ee"></i>Нужна цифровая прокачка</li><li><i class="dot gray"></i>Уверенный пользователь</li><li><i class="dot soft"></i>Осмотрительный пользователь</li><li><i class="dot" style="background:var(--accent)"></i>Киберзнаток</li></ul></div>
+        </section>
+
+        <section class="section panel category-panel" data-section>
+          <button class="section-toggle mobile-only" type="button">Результаты по категориям</button>
+          <div class="section-content"><h2 class="panel-heading">Результаты по категориям</h2><div class="category-wrap"><canvas id="category-chart" aria-label="Результаты по категориям"></canvas></div><div class="category-foot">Средний индекс (из 100%)</div></div>
+        </section>
+
+        <section class="section panel errors-panel" data-section>
+          <button class="section-toggle mobile-only" type="button">Наиболее частые ошибки</button>
+          <div class="section-content"><h2 class="panel-heading">Наиболее частые ошибки</h2>
+            <article class="error-row"><div class="error-meta"><strong class="error-title">02 вопрос</strong><span class="error-rate">65% ошибок</span></div><p class="error-question">Придя утром на работу вы обнаружили в коридоре неизвестную USB-флешку. Как поступите?</p><div class="answers"><div><div class="answer"><strong>Часто выбирают&nbsp; А</strong>Подключу к своему компьютеру возможно, по файлам удастся определить владельца.</div></div><div><div class="answer"><strong>Правильный ответ&nbsp; А</strong>Подключу к своему компьютеру возможно, по файлам удастся определить владельца.</div></div></div></article>
+            <article class="error-row"><div class="error-meta"><strong class="error-title">07 вопрос</strong><span class="error-rate">49% ошибок</span></div><p class="error-question">Вам с нового номера пишет друг: «Привет! Я потерял телефон. Срочно одолжи мне 3000 рублей до завтра». Что будете делать?</p><div class="answers"><div><div class="answer"><strong>Часто выбирают&nbsp; А</strong>Переведу: неудобно заставлять человека ждать в беде!</div></div><div><div class="answer"><strong>Правильный ответ&nbsp; А</strong>Свяжусь с ним другим привычным способом — например, позвонив по сохранённому номеру.</div></div></div></article>
+            <div class="error-more">Смотреть все прохождения&nbsp; →</div>
+          </div>
+        </section>
+
+        <section class="section panel results-panel" data-section>
+          <button class="section-toggle mobile-only" type="button">Результаты по категориям</button>
+          <div class="section-content">
+            <div class="results-header"><div class="results-title">Прохождения игры | <strong>180</strong> всего</div><button class="control export-control" type="button" data-export><span>экспорт данных</span><img class="export-icon" src="images/admin-export-light.svg" alt=""></button></div>
+            <table class="results-table"><thead><tr><th>Пользователь</th><th>Дата и время</th><th>Длит.</th><th>Индекс</th><th>Профиль</th><th>По категориям</th></tr></thead><tbody id="results-body"></tbody></table>
+            <div class="mobile-collection" id="mobile-results"></div>
+            <div class="pagination"><span>Стр. 1 из 18</span><span class="pagination-actions"><span>←</span><span>→</span></span></div>
+            <button class="mobile-bottom-export" type="button" data-export>Экспорт данных <img class="export-icon" src="images/admin-export-light.svg" alt=""></button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="script/admin.js" defer></script>
+</body>
+</html>
+
+
+
+
+
+
+

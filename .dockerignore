@@ -1,0 +1,14 @@
+.git
+.gitignore
+.dockerignore
+Dockerfile
+docker-compose.yml
+*.scss
+*.map
+scss
+
+data/
+__pycache__/
+*.pyc
+.env
+

@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css?v=4">
+    <title>Museo de Crypto</title>
+</head>
+
+<body>
+    <div class="preloader light">
+        <div class="preloader__wrap-mobile">
+            <img class="preloader__img-mobile" src="images/preloader/musey-iks-mobile.png"
+                srcset="images/preloader/musey-iks-mobile.png 1x, images/preloader/musey-iks-mobile@2x.png 2x"
+                alt="Логотип музея и партнера" width="250" height="82">
+            <div class="preloader__wrap">
+                <span class="preloader__text">при поддержке</span>
+                <div class="preloader__wrap-mobile-icon">
+                    <svg class="preloader__icon-bastion" width="126" height="29" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#preloader-bastion-mobile"></use>
+                    </svg>
+                    <div class="preloader__wrap-mobile-line"></div>
+                    <svg class="preloader__icon-skillbox" width="42" height="10" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#skillbox-icon"></use>
+                    </svg>
+                </div>
+            </div>
+            <svg class="preloader__icon" width="375" height="785" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#preloader-bg"></use>
+            </svg>
+        </div>
+        <div class="preloader__wrap-desktop">
+            <img class="preloader__image" src="images/preloader/preloader-desktop.jpg"
+                srcset="images/preloader/preloader-desktop@2x.jpg 2x" alt="Задний фон" width="1440" height="900">
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header__wrap">
+            <img class="header__logo-mobile" src="images/logo-mobile.png"
+                srcset="images/logo-mobile.png 1x, images/logo-mobile@2x.png 2x" alt="Логотип мобильная версия">
+            <button class="header__btn-theme is-light">
+                <svg class="header__btn-icon header__btn-icon--light" width="26" height="13" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#btn-theme-icon-light"></use>
+                </svg>
+                <svg class="header__btn-icon" width="26" height="13" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#btn-theme-icon"></use>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="main light">
+        <section class="start is-active">
+            <div class="header__container">
+                <svg class="header__container-icon-musey" width="49" height="31" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#header-container-musey"></use>
+                </svg>
+                <div class="header__container-line"></div>
+                <div class="header__container-wrap">
+                    <svg class="header__container-logo" width="94" height="22" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#bastion-logo-header"></use>
+                    </svg>
+                    <svg class="header__icon-skillbox" width="27" height="6" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#skillbox-icon"></use>
+                    </svg>
+                </div>
+                <a class="header__container-btn"
+                    href="https://cryptography-museum.ru/events/vystavka-kljuch-doverija-bezopasnost-v-epohu-vysokih-tehnologij"
+                    target="_blank">О выставке
+                    <svg class="header__btn-icon" width="25" height="15" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#header-container-btn"></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="container">
+                <h1 class="start__title">Маршрут
+                    цифрового
+                    дня</h1>
+                <p class="start__text">интерактивная игра по&nbsp;мотивам выставки о&nbsp;безопасности
+                    в&nbsp;цифровой среде</p>
+                <picture class="start__picture">
+                    <source media="(min-width: 1440px)"
+                        srcset="images/start/key-desktop.png 1x, images/start/key-desktop@2x.png 2x">
+                    <img class="start__image" src="images/start/key.png"
+                        srcset="images/start/key.png 1x, images/start/key@2x.png 2x" alt="Ключ и замок" width="224"
+                        height="260">
+                </picture>
+                <picture class="start__picture">
+                    <source media="(min-width: 1440px)"
+                        srcset="images/start/key-light.png 1x, images/start/key-light@2x.png 2x">
+                    <img class="start__image-light" src="images/start/key-light.png"
+                        srcset="images/start/key-light.png 1x, images/start/key-light@2x.png 2x" alt="Ключ и замок"
+                        width="224" height="260">
+                </picture>
+                <div class="start__wrap-mobile">
+                    <span class="start__text-min">Без регистрации. Всё полностью анонимно.</span>
+                    <div class="start__btn-wrap">
+                        <button class="start__btn start__btn--color btn" id="start">Начать игру</button>
+                        <a class="start__btn" id="musey"
+                            href="https://cryptography-museum.ru/events/vystavka-kljuch-doverija-bezopasnost-v-epohu-vysokih-tehnologij"
+                            target="_blank">О выставке</a>
+                    </div>
+                </div>
+                <div class="start__wrap-desktop">
+                    <div class="start__inner">
+                        <div class="start__inner-text">
+                            <span class="start__text-time">9</span>
+                            <p class="start__desc">реальных
+                                ситуаций</p>
+                        </div>
+                        <div class="start__inner-text">
+                            <span class="start__text-time">5-7</span>
+                            <p class="start__desc">минут игры</p>
+                        </div>
+                    </div>
+                    <span class="start__text-min">Без регистрации. Всё полностью анонимно.</span>
+                    <button class="start__desktop-btn btn" id="start"><span>Начать игру</span>
+                        <svg class="start__btn-icon" width="24" height="24" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#start-btn-arrow"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="manual">
+            <div class="header__container">
+                <svg class="header__container-icon-musey" width="49" height="31" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#header-container-musey"></use>
+                </svg>
+                <div class="header__container-line"></div>
+                <div class="header__container-wrap">
+                    <svg class="header__container-logo" width="94" height="22" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#bastion-logo-header"></use>
+                    </svg>
+                    <svg class="header__icon-skillbox" width="27" height="6" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#skillbox-icon"></use>
+                    </svg>
+                </div>
+                <a class="header__container-btn"
+                    href="https://cryptography-museum.ru/events/vystavka-kljuch-doverija-bezopasnost-v-epohu-vysokih-tehnologij"
+                    target="_blank">О выставке
+                    <svg class="header__btn-icon" width="25" height="15" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#header-container-btn"></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="container">
+                <h2 class="manual__title">Проверим, насколько <br>вы&nbsp;умеете защищать <br>себя в&nbsp;цифровом мире
+                </h2>
+                <ul class="manual__list">
+                    <li class="manual__item">
+                        <div class="manual__mobile">
+                            <img class="manual__img" src="images/manual/help1.png"
+                                srcset="images/manual/help1.png 1x, images/manual/help1@2x.png 2x" alt="Знак вопроса"
+                                width="40" height="40">
+                            <img class="manual__img-light" src="images/manual/help1-light.png"
+                                srcset="images/manual/help1-light.png 1x, images/manual/help1-light@2x.png 2x"
+                                alt="Открытый замок" width="40" height="40">
+                        </div>
+                        <img class="manual__img-desktop" src="images/manual/item1.png" alt="Знак вопроса" width="74"
+                            height="74">
+                        <img class="manual__img-desktop-light" src="images/manual/item1-light.png" alt="Знак вопроса"
+                            width="74" height="74">
+                        <h3 class="manual__item-title">Узнайте, как мыслят современные хакеры</h3>
+                    </li>
+                    <li class="manual__item">
+                        <div class="manual__mobile">
+                            <img class="manual__img" src="images/manual/phone-2.png"
+                                srcset="images/manual/phone-2.png 1x, images/manual/phone-2@2x.png 2x" alt="Телефон"
+                                width="40" height="40">
+                            <img class="manual__img-light" src="images/manual/phone-2-light.png"
+                                srcset="images/manual/phone-2-light.png 1x, images/manual/phone-2-light@2x.png 2x"
+                                alt="Телефон" width="40" height="40">
+                        </div>
+                        <img class="manual__img-desktop" src="images/manual/item2.png" alt="Палец" width="74"
+                            height="74">
+                        <img class="manual__img-desktop-light" src="images/manual/item2-light.png" alt="Палец"
+                            width="74" height="74">
+                        <h3 class="manual__item-title">Поймите, какие скрытые угрозы таит ваш смартфон.</h3>
+                    </li>
+                    <li class="manual__item">
+                        <div class="manual__mobile">
+                            <img class="manual__img" src="images/manual/shield3.png"
+                                srcset="images/manual/shield3.png 1x, images/manual/shield3@2x.png 2x" alt="Защита"
+                                width="40" height="40">
+                            <img class="manual__img-light" src="images/manual/shield3-light.png"
+                                srcset="images/manual/shield3-light.png 1x, images/manual/shield3-light@2x.png 2x"
+                                alt="Защита с ключом" width="40" height="40">
+                        </div>
+                        <img class="manual__img-desktop" src="images/manual/item3.png" alt="Звезда" width="74"
+                            height="74">
+                        <img class="manual__img-desktop-light" src="images/manual/item3-light.png" alt="Звезда"
+                            width="74" height="74">
+                        <h3 class="manual__item-title">Защитите свои пароли, деньги и личные переписки</h3>
+                    </li>
+                </ul>
+                <div class="manual__wrap">
+                    <div class="manual__wrap-text">
+                        <span class="manual__text-time">5-7</span>
+                        <p class="manual__desc">минут время
+                            прохождения</p>
+                    </div>
+                    <div class="manual__wrap-text">
+                        <span class="manual__text-time">9</span>
+                        <p class="manual__desc">жизненных
+                            ситуаций</p>
+                    </div>
+                </div>
+                <p class="manual__text">Дойдите до финала
+                    <span>и получите скидку на билет</span>
+                </p>
+                <button class="manual__btn btn">Начать</button>
+                <img class="manual__image" src="images/manual/manual.png" alt="Векторный телефон и щит" width="371"
+                    height="499">
+                <img class="manual__image-light" src="images/manual/manual-light.png" alt="Векторный телефон и щит"
+                    width="371" height="499">
+            </div>
+        </section>
+        <section class="question" aria-label="Тест по цифровой безопасности">
+            <!-- Все вопросы используют один компонент .question__item.
+                 Для нового вопроса достаточно скопировать article и поменять контент. -->
+            <div class="header-desktop">
+                <div class="header-desktop__wrap">
+                    <svg class="header-desktop__icon-musey" width="49" height="31" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#header-container-musey"></use>
+                    </svg>
+                    <div class="header-desktop__line"></div>
+                    <div class="header-desktop__wrap-new">
+                        <svg class="header-desktop__logo" width="94" height="22" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#bastion-logo-header"></use>
+                        </svg>
+                        <svg class="header-desktop__icon-skillbox" width="27" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#skillbox-icon"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="header-desktop__progress">
+                    <span class="header-desktop__number">вопрос 01 из 09</span>
+                    <img class="header-desktop__image" src="images/header-desktop/progress-1.png"
+                        alt="Прогресс прохождения игры" width="472" height="32">
+                </div>
+                <span class="header-desktop__text">0 из 22 баллов</span>
+            </div>
+
+            <article class="question__item question__item--first" data-question="1">
+                <div class="progress-bar">
+                    <div class="container">
+                        <div class="progress-bar__wrap">
+                            <span class="progress-bar__text">Вопрос 1/9</span>
+                            <span class="progress-bar__score">0/22</span>
+                        </div>
+                        <svg class="progress-bar__icon" width="334" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-1"></use>
+                        </svg>
+                        <svg class="progress-bar__icon-light" width="334" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-1-light"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="question__desktop">
+                        <div class="question__mobile">
+                            <img class="question__image" src="images/question/question-1.png"
+                                srcset="images/question/question-1.png 1x, images/question/question-1@2x.png 2x"
+                                alt="Меню подключения к Wi-Fi" width="335" height="138">
+                            <img class="question__image-light" src="images/question/question-1-light.png"
+                                srcset="images/question/question-1-light.png 1x, images/question/question-1-light@2x.png 2x"
+                                alt="Меню подключения к Wi-Fi" width="335" height="138">
+                        </div>
+                        <div class="question__desktop-left">
+                            <h2 class="question__title">В&nbsp;кофейне доступны несколько
+                                <span>Wi-Fi-сетей. <span class="question__title-color">Какую вы выберете?</span></span>
+                            </h2>
+                            <p class="question__text">Сотрудник кафе сообщил, что гостевая сеть называется Coffee_Guest,
+                                а
+                                пароль указан на&nbsp;чеке.</p>
+                            <img class="question__img-left" src="images/question/question-1-desktop.png"
+                                alt="Картинка выбора Wi-Fi-сетей" width="340" height="319">
+                            <img class="question__img-left question__img-left-light"
+                                src="images/question/question-1-desktop-light.png" alt="Картинка выбора Wi-Fi-сетей"
+                                width="340" height="319">
+                        </div>
+                        <div class="question__desktop-right">
+                            <div class="question__answers">
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q1" id="q1_1" value="Coffee Free">
+                                    Coffee Free
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q1" id="q1_2" value="Coffee_Guest 🔒">
+                                    Coffee_Guest 🔒
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q1" id="q1_3" value="FREE_WIFI_NO_SMS_100%">
+                                    FREE_WIFI_NO_SMS_100%
+                                </label>
+                            </div>
+                            <div class="question__check-wrap">
+                                <span class="question__check-text">
+                                    <svg class="question__check-icon" width="24" height="24" aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#check-text-icon"></use>
+                                    </svg>
+                                    Ответ можно изменить до&nbsp;проверки
+                                </span>
+                                <button class="question__check btn" type="button">Проверить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="question__item question__item--second" data-question="2">
+                <div class="progress-bar">
+                    <div class="container">
+                        <div class="progress-bar__wrap">
+                            <span class="progress-bar__text">Вопрос 2/9</span>
+                            <span class="progress-bar__score">0/22</span>
+                        </div>
+                        <svg class="progress-bar__icon" width="334" height="6" id="2" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-2"></use>
+                        </svg>
+                        <svg class="progress-bar__icon-light" width="334" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-2-light"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="question__desktop">
+                        <div class="question__desktop-left">
+                            <h2 class="question__title">Придя утром на&nbsp;работу
+                                вы&nbsp;обнаружили в&nbsp;коридоре неизвестную USB-флешку
+                                <span class="question__title-color">Как поступите?</span>
+                            </h2>
+                            <img class="question__img-left" src="images/question/question-2-desktop.png"
+                                alt="Картинка флэшки" width="359" height="354">
+                            <img class="question__img-left question__img-left-light"
+                                src="images/question/question-2-desktop-light.png" alt="Картинка флэшки" width="359"
+                                height="354">
+                        </div>
+                        <div class="question__desktop-right">
+                            <div class="question__answers">
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q2" id="q2_1"
+                                        value="Подключу к&nbsp;своему компьютеру&nbsp;&mdash; возможно, по&nbsp;файлам удастся определить владельца">
+                                    Подключу&nbsp;к&nbsp;своему компьютеру&nbsp;&mdash; возможно,&nbsp;по&nbsp;файлам
+                                    удастся определить владельца
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q2" id="q2_2"
+                                        value="Подключу к старому компьютеру, на котором нет ничего важного">
+                                    Подключу&nbsp;к&nbsp;старому компьютеру,&nbsp;на&nbsp;котором нет ничего важного
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q2" id="q2_3"
+                                        value="Не буду подключать и передам ответственному ИТ-сотруднику">
+                                    Не буду подключать&nbsp;и&nbsp;передам ответственному ИТ-сотруднику
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q2" id="q2_4" value="Просто оставлю её там, где нашёл">
+                                    Просто оставлю её там, где нашёл
+                                </label>
+                            </div>
+                            <div class="question__check-wrap">
+                                <span class="question__check-text">
+                                    <svg class="question__check-icon" width="24" height="24" aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#check-text-icon"></use>
+                                    </svg>
+                                    Ответ можно изменить до&nbsp;проверки
+                                </span>
+                                <button class="question__check btn" type="button">Проверить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="question__item question__item--three" data-question="3">
+                <div class="progress-bar">
+                    <div class="container">
+                        <div class="progress-bar__wrap">
+                            <span class="progress-bar__text">Вопрос 3/9</span>
+                            <span class="progress-bar__score">0/22</span>
+                        </div>
+                        <svg class="progress-bar__icon" width="334" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-3"></use>
+                        </svg>
+                        <svg class="progress-bar__icon-light" width="334" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-3-light"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="question__wrapper">
+                        <img class="question__img-monitor" src="images/question/Монитор.png" alt="Монитор" width="1013"
+                            height="745">
+                        <button class="question__help btn">?</button>
+                        <div class="question__desktop-wrap">
+                            <h2 class="question__container-title">помогите бабушке придумать надежный пароль</h2>
+                            <div class="accordeon">
+                                <button class="accordeon__btn btn">Требования безопасности
+                                    <svg class="accordeon__icon" width="24" height="24" aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#accordeon-icon"></use>
+                                    </svg>
+                                </button>
+                                <ul class="accordeon__list">
+                                    <li class="accordeon__item">
+                                        <p class="accordeon__text">Длина пароля <span>от 8 до 12</span> символов</p>
+                                    </li>
+                                    <li class="accordeon__item">
+                                        <p class="accordeon__text">Пароль должен содержать <span>хотя бы одну
+                                                цифру</span></p>
+                                    </li>
+                                    <li class="accordeon__item">
+                                        <p class="accordeon__text">Пароль должен содержать хотя бы одну <span>букву
+                                                латинского
+                                                алфавита
+                                                в нижнем регистре</span></p>
+                                    </li>
+                                    <li class="accordeon__item">
+                                        <p class="accordeon__text">Пароль должен содержать хотя бы одну <span>букву
+                                                латинского
+                                                алфавита
+                                                в верхнем регистре</span></p>
+                                    </li>
+                                    <li class="accordeon__item">
+                                        <p class="accordeon__text">Пароль не должен содержать в себе логин</p>
+                                    </li>
+                                    <li class="accordeon__item">
+                                        <p class="accordeon__text">Пароль не должен быть предсказуем</p>
+                                    </li>
+                                    <li class="accordeon__item">
+                                        <p class="accordeon__text">Пароль должен содержать хотя бы один спецсимвол из
+                                            набора:
+                                            <span>"()^?=!.*$&_-"</span>
+                                        </p>
+                                    </li>
+                                    <li class="accordeon__item">
+                                        <p class="accordeon__text">Пароль <span>не должен содержать</span> в себе
+                                            пробел(ы)</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="question__container">
+                                <div class="question__answers" id="question-3">
+                                    <form class="question__form" action="#" method="post">
+                                        <div class="custom-input">
+                                            <label class="custom-input__label" for="login">Логин</label>
+                                            <input class="custom-input__field" type="text" name="login" id="login"
+                                                disabled value="baba.valya">
+                                        </div>
+                                        <div class="custom-input">
+                                            <label class="custom-input__label" for="password">Пароль</label>
+                                            <input class="custom-input__field" type="text" name="password" id="password"
+                                                required>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <span class="question__answers-text"></span>
+                            <div class="question__check-wrap">
+                                <span class="question__check-text">
+                                    <svg class="question__check-icon" width="24" height="24" aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#check-text-icon"></use>
+                                    </svg>
+                                    Ответ можно изменить до&nbsp;проверки
+                                </span>
+                                <button class="question__check btn" type="button">Проверить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="question__item question__item--four" data-question="4">
+                <div class="progress-bar">
+                    <div class="container">
+                        <div class="progress-bar__wrap">
+                            <span class="progress-bar__text">Вопрос 4/9</span>
+                            <span class="progress-bar__score">0/22</span>
+                        </div>
+                        <svg class="progress-bar__icon" width="334" height="6" id="4" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-4"></use>
+                        </svg>
+                        <svg class="progress-bar__icon-light" width="334" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-4-light"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="question__desktop">
+                        <div class="question__desktop-left">
+                            <h2 class="question__title">В&nbsp;университете вы&nbsp;увидели объявление:
+                                &laquo;Бесплатный кофе
+                                всем студентам! <span class="">Отсканируйте QR-код</span> и&nbsp;авторизуйтесь для
+                                получения купона&raquo;
+                                <span class="question__text-color">Как поступите?</span>
+                                <svg class="question__title-icon" width="209" height="27" id="4" aria-hidden="true">
+                                    <use xlink:href="images/sprite.svg#question-4-icon"></use>
+                                </svg>
+                            </h2>
+                            <img class="question__img-left" src="images/question/question-4-desktop.png"
+                                alt="Картинка Qr-код в университете" width="260" height="451">
+                            <img class="question__img-left question__img-left-light"
+                                src="images/question/question-4-desktop-light.png" alt="Картинка Qr-код в университете"
+                                width="260" height="451">
+                        </div>
+                        <div class="question__desktop-right">
+                            <div class="question__answers">
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q4" id="q4_1"
+                                        value="Отсканирую и перейду: QR-код сам по себе безопаснее обычной ссылки">
+                                    Отсканирую&nbsp;и&nbsp;перейду: QR-код&nbsp;сам&nbsp;по&nbsp;себе безопаснее обычной
+                                    ссылки
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q4" id="q4_2"
+                                        value="Отсканирую, посмотрю адрес сайта и продолжу, если он выглядит знакомо">
+                                    Отсканирую, посмотрю адрес
+                                    сайта&nbsp;и&nbsp;продолжу,&nbsp;если&nbsp;он&nbsp;выглядит знакомо
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q4" id="q4_3"
+                                        value="Найду информацию об акции через официальный сайт организации">
+                                    Найду информацию&nbsp;об&nbsp;акции через официальный сайт организации
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q4" id="q4_4"
+                                        value="Спрошу знакомого, открывал ли он QR-код, и если у него всё нормально - воспользуюсь">
+                                    Спрошу знакомого,
+                                    открывал&nbsp;ли&nbsp;он&nbsp;QR-код,&nbsp;и&nbsp;если&nbsp;у&nbsp;него всё
+                                    нормально - воспользуюсь
+                                </label>
+                            </div>
+                            <div class="question__check-wrap">
+                                <span class="question__check-text">
+                                    <svg class="question__check-icon" width="24" height="24" aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#check-text-icon"></use>
+                                    </svg>
+                                    Ответ можно изменить до&nbsp;проверки
+                                </span>
+                                <button class="question__check btn" type="button">Проверить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="question__item question__item--five" data-question="5">
+                <div class="progress-bar">
+                    <div class="container">
+                        <div class="progress-bar__wrap">
+                            <span class="progress-bar__text">Вопрос 5/9</span>
+                            <span class="progress-bar__score">0/22</span>
+                        </div>
+                        <svg class="progress-bar__icon" width="334" height="6" id="5" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-5"></use>
+                        </svg>
+                        <svg class="progress-bar__icon-light" width="334" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-5-light"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="question__desktop">
+                        <div class="question__desktop-left">
+                            <div class="question__mobile">
+                                <h2 class="question__title">На&nbsp;почту пришло уведомление: &laquo;Зафиксирован вход
+                                    в&nbsp;ваш
+                                    аккаунт
+                                    с&nbsp;нового устройства.
+                                    <br>Если это были
+                                    не&nbsp;вы,
+                                    <span class="question__title-color">
+                                        срочно смените пароль
+                                        по&nbsp;ссылке</span>&raquo;. Вы&nbsp;не&nbsp;узнаёте этот вход. <br>Что
+                                    сделаете?
+                                    <svg class="question__title-icon" width="202" height="25" id="5-1"
+                                        aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#question-5-icon-1"></use>
+                                    </svg>
+                                    <svg class="question__title-icon" width="203" height="28" id="5-2"
+                                        aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#question-5-icon-2"></use>
+                                    </svg>
+                                </h2>
+                            </div>
+                            <h2 class="question__title question__title--desktop">На почту пришло уведомление:</h2>
+                            <img class="question__img-left" src="images/question/email.png"
+                                alt="Картинка письма на почте" width="632" height="550">
+                            <img class="question__img-left question__img-left-light" src="images/question/email.png"
+                                alt="Картинка письма на почте" width="632" height="550">
+                        </div>
+                        <div class="question__desktop-right">
+                            <p class="question__desktop-text">Вы не узнаёте этот вход. Что сделаете?</p>
+                            <div class="question__answers">
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q5" id="q5_1"
+                                        value="Перейду по ссылке из письма и сразу сменю пароль">
+                                    Перейду&nbsp;по&nbsp;ссылке&nbsp;из&nbsp;письма&nbsp;и&nbsp;сразу сменю пароль
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q5" id="q5_2"
+                                        value="Проверю адрес отправителя и если он выглядит официально, перейду по ссылке">
+                                    Проверю адрес отправителя&nbsp;и&nbsp;если&nbsp;он&nbsp;выглядит официально,
+                                    перейду&nbsp;по&nbsp;ссылке
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q5" id="q5_3"
+                                        value="Самостоятельно открою сайт или приложение и проверю активные сеансы и настройки безопасности">
+                                    Самостоятельно открою сайт&nbsp;или&nbsp;приложение&nbsp;и&nbsp;проверю активные
+                                    сеансы&nbsp;и&nbsp;настройки безопасности
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q5" id="q5_4"
+                                        value="Проигнорирую письмо: если ничего не нажимать, опасности нет">
+                                    Проигнорирую письмо:&nbsp;если&nbsp;ничего&nbsp;не&nbsp;нажимать, опасности нет
+                                </label>
+                            </div>
+                            <div class="question__check-wrap">
+                                <span class="question__check-text">
+                                    <svg class="question__check-icon" width="24" height="24" aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#check-text-icon"></use>
+                                    </svg>
+                                    Ответ можно изменить до&nbsp;проверки
+                                </span>
+                                <button class="question__check btn" type="button">Проверить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="question__item question__item--six" data-question="6">
+                <div class="progress-bar">
+                    <div class="container">
+                        <div class="progress-bar__wrap">
+                            <span class="progress-bar__text">Вопрос 6/9</span>
+                            <span class="progress-bar__score">0/22</span>
+                        </div>
+                        <svg class="progress-bar__icon" width="334" height="6" id="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-6"></use>
+                        </svg>
+                        <svg class="progress-bar__icon-light" width="334" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-6-light"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="question__desktop">
+                        <div class="question__desktop-left">
+                            <h2 class="question__title" id="title-6">Служба безопасности банка</h2>
+                            <span class="question__text-number">+7 999 123 33 34</span>
+                            <div class="question__dialog">
+                                <ul class="question__list">
+                                    <span class="question__text-number-desktop">+7 999 123 33 34</span>
+                                    <li class="question__dialog-item question__dialog-item--security is-active" id="r1">
+                                        <img class="question__img" src="images/question/security.png"
+                                            srcset="images/question/security.png 1x, images/question/security@2x.png 2x"
+                                            alt="Логотип службы безопасности">
+                                        <img class="question__img-light" src="images/question/security-light.png"
+                                            alt="Логотип службы безопасности">
+                                        <p class="question__text-security">Здравствуйте! Служба безопасности банка. Мы
+                                            обнаружили подозрительную попытку перевода с вашей карты на 14 900 ₽. Вы
+                                            совершали
+                                            эту операцию?</p>
+                                    </li>
+                                    <li class="question__dialog-item question__dialog-item--people" id="u1">
+                                        <p class="question__text-people">Нет! Что мне делать? Помогите скорее!</p>
+                                        <img class="question__img" src="images/question/people.png"
+                                            srcset="images/question/people.png 1x, images/question/people@2x.png 2x"
+                                            alt="Логотип человека">
+                                        <img class="question__img-light" src="images/question/people-light.png"
+                                            alt="Логотип человека">
+                                    </li>
+                                    <li class="question__dialog-item question__dialog-item--security" id="otv-1">
+                                        <img class="question__img" src="images/question/security.png"
+                                            srcset="images/question/security.png 1x, images/question/security@2x.png 2x"
+                                            alt="Логотип службы безопасности">
+                                        <img class="question__img-light" src="images/question/security-light.png"
+                                            alt="Логотип службы безопасности">
+                                        <p class="question__text-security"></p>
+                                    </li>
+                                    <li class="question__dialog-item question__dialog-item--security" id="r2">
+                                        <img class="question__img" src="images/question/security.png"
+                                            srcset="images/question/security.png 1x, images/question/security@2x.png 2x"
+                                            alt="Логотип службы безопасности">
+                                        <img class="question__img-light" src="images/question/security-light.png"
+                                            alt="Логотип службы безопасности">
+                                        <p class="question__text-security">Для подтверждения личности напишите последние
+                                            четыре
+                                            цифры карты и код, который сейчас придёт вам в SMS.</p>
+                                    </li>
+                                    <li class="question__dialog-item question__dialog-item--people" id="u2">
+                                        <p class="question__text-people">Хорошо, сейчас пришлю.</p>
+                                        <img class="question__img" src="images/question/people.png"
+                                            srcset="images/question/people.png 1x, images/question/people@2x.png 2x"
+                                            alt="Логотип человека">
+                                        <img class="question__img-light" src="images/question/people-light.png"
+                                            alt="Логотип человека">
+                                    </li>
+                                    <li class="question__dialog-item question__dialog-item--security" id="otv-2">
+                                        <img class="question__img" src="images/question/security.png"
+                                            srcset="images/question/security.png 1x, images/question/security@2x.png 2x"
+                                            alt="Логотип службы безопасности">
+                                        <img class="question__img-light" src="images/question/security-light.png"
+                                            alt="Логотип службы безопасности">
+                                        <p class="question__text-security">Отлично, код получен. Проверяю систему.</p>
+                                    </li>
+                                    <li class="question__dialog-item question__dialog-item--security" id="r3">
+                                        <img class="question__img" src="images/question/security.png"
+                                            srcset="images/question/security.png 1x, images/question/security@2x.png 2x"
+                                            alt="Логотип службы безопасности">
+                                        <img class="question__img-light" src="images/question/security-light.png"
+                                            alt="Логотип службы безопасности">
+                                        <p class="question__text-security"></p>
+                                    </li>
+                                    <li class="question__dialog-item question__dialog-item--people" id="u3">
+                                        <p class="question__text-people"></p>
+                                        <img class="question__img" src="images/question/people.png"
+                                            srcset="images/question/people.png 1x, images/question/people@2x.png 2x"
+                                            alt="Логотип человека">
+                                        <img class="question__img-light" src="images/question/people-light.png"
+                                            alt="Логотип человека">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="question__desktop-right">
+                            <div class="question__answers">
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q6" id="q6_1"
+                                        value="Нет! Что мне делать? Помогите скорее!" score="0">
+                                    Нет! Что&nbsp;мне&nbsp;делать? Помогите скорее!
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q6" id="q6_2" score="1"
+                                        value="А какой именно банк вы представляете?">
+                                    А какой именно банк&nbsp;вы&nbsp;представляете?
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q6" id="q6_3" score="2"
+                                        value="Если вы сотрудник банка, зачем пишете мне в мессенджере?">
+                                    Если&nbsp;вы&nbsp;сотрудник банка, зачем пишете&nbsp;мне&nbsp;в&nbsp;мессенджере?
+                                </label>
+                            </div>
+                            <button class="question__btn-dialog btn" type="button">Продолжить</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="question__item question__item--seven" data-question="7">
+                <div class="progress-bar">
+                    <div class="container">
+                        <div class="progress-bar__wrap">
+                            <span class="progress-bar__text">Вопрос 7/9</span>
+                            <span class="progress-bar__score">0/22</span>
+                        </div>
+                        <svg class="progress-bar__icon" width="334" height="6" id="7" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-7"></use>
+                        </svg>
+                        <svg class="progress-bar__icon-light" width="334" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-7-light"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="question__desktop">
+                        <div class="question__desktop-left">
+                            <div class="question__mobile">
+                                <h2 class="question__title">Вам с&nbsp;нового номера пишет друг: &laquo;Привет!
+                                    Я&nbsp;потерял
+                                    телефон.
+                                    Срочно <span class="question__text-color">одолжи мне 3000 рублей</span>
+                                    до&nbsp;завтра&raquo;. Что сделаете?
+
+                                </h2>
+                            </div>
+                            <h2 class="question__title question__title--desktop">Вам с нового номера пишет друг:</h2>
+                            <img class="question__img-left" src="images/question/friend.png" alt="Переписка с другом"
+                                width="632" height="550">
+                            <img class="question__img-left question__img-left-light" src="images/question/friend.png"
+                                alt="Переписка с другом" width="632" height="550">
+                        </div>
+                        <div class="question__desktop-right">
+                            <span class="question__desktop-desc">Что сделаете?</span>
+                            <div class="question__answers">
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q7" id="q7_1"
+                                        value="Переведу: неудобно заставлять человека ждать в беде">
+                                    Переведу: неудобно заставлять человека ждать&nbsp;в&nbsp;беде
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q7" id="q7_2"
+                                        value="Задам личный вопрос, ответ на который должен знать мой знакомый">
+                                    Задам личный вопрос, ответ&nbsp;на&nbsp;который должен знать мой знакомый
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q7" id="q7_3"
+                                        value="Свяжусь с ним другим привычным способом - например, позвонив по сохранённому номеру">
+                                    Свяжусь&nbsp;с&nbsp;ним другим привычным способом - например,
+                                    позвонив&nbsp;по&nbsp;сохранённому номеру
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q7" id="q7_4"
+                                        value="Если на аватарке его фотография и он знает моё имя, значит всё нормально, можно переводить">
+                                    Если&nbsp;на&nbsp;аватарке&nbsp;его&nbsp;фотография&nbsp;и&nbsp;он&nbsp;знает моё
+                                    имя, значит всё нормально, можно переводить
+                                </label>
+                            </div>
+                            <div class="question__check-wrap">
+                                <span class="question__check-text">
+                                    <svg class="question__check-icon" width="24" height="24" aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#check-text-icon"></use>
+                                    </svg>
+                                    Ответ можно изменить до&nbsp;проверки
+                                </span>
+                                <button class="question__check btn" type="button">Проверить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="question__item question__item--eight" data-question="8">
+                <div class="progress-bar">
+                    <div class="container">
+                        <div class="progress-bar__wrap">
+                            <span class="progress-bar__text">Вопрос 8/9</span>
+                            <span class="progress-bar__score">0/22</span>
+                        </div>
+                        <svg class="progress-bar__icon" width="334" height="6" id="8" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-8"></use>
+                        </svg>
+                        <svg class="progress-bar__icon-light" width="334" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-8-light"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="question__desktop">
+                        <div class="question__desktop-left">
+                            <div class="question__mobile">
+                                <h2 class="question__title">Друг прислал ссылку на&nbsp;
+                                    <span class="question__text-color">скачивание новой игры</span> в&nbsp;обход
+                                    официального магазина. Телефон предупреждает об&nbsp;опасности установки
+                                    из&nbsp;неизвестных
+                                    источников. Что сделаете?
+                                </h2>
+                            </div>
+                            <h2 class="question__title question__title--desktop">Друг прислал ссылку на скачивание новой
+                                игры в обход
+                                официального магазина</h2>
+                            <img class="question__img-left" src="images/question/game.png" alt="Переписка с другом"
+                                width="453" height="620">
+                            <img class="question__img-left question__img-left-light" src="images/question/game.png"
+                                alt="Переписка с другом" width="453" height="620">
+                        </div>
+                        <div class="question__desktop-right">
+                            <div class="question__answers">
+                                <span class="question__desktop-desc">Что сделаете?</span>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q8" id="q8_1"
+                                        value="Поищу игру в&nbsp;официальном магазине или на&nbsp;сайте разработчика и&nbsp;проверю, существует&nbsp;ли такая версия">
+                                    Поищу игру&nbsp;в&nbsp;официальном магазине&nbsp;или&nbsp;на&nbsp;сайте
+                                    разработчика&nbsp;и&nbsp;проверю, существует&nbsp;ли&nbsp;такая версия
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q8" id="q8_2"
+                                        value="Запущу игру: раз друг рекомендует, там всё нормально">
+                                    Запущу игру:&nbsp;раз&nbsp;друг рекомендует, там всё нормально
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q8" id="q8_3"
+                                        value="Сначала спрошу друга, точно ли он сам прислал ссылку и уже устанавливал игру">
+                                    Сначала спрошу друга, точно&nbsp;ли&nbsp;он&nbsp;сам&nbsp;прислал
+                                    ссылку&nbsp;и&nbsp;уже устанавливал игру
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q8" id="q8_4"
+                                        value="Проверю ссылку и название сайта: если они не выглядят подозрительно, скачаю">
+                                    Проверю ссылку&nbsp;и&nbsp;название сайта:&nbsp;если&nbsp;они&nbsp;не&nbsp;выглядят
+                                    подозрительно, скачаю
+                                </label>
+                            </div>
+                            <div class="question__check-wrap">
+                                <span class="question__check-text">
+                                    <svg class="question__check-icon" width="24" height="24" aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#check-text-icon"></use>
+                                    </svg>
+                                    Ответ можно изменить до&nbsp;проверки
+                                </span>
+                                <button class="question__check btn" type="button">Проверить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="question__item question__item--seven" data-question="9">
+                <div class="progress-bar">
+                    <div class="container">
+                        <div class="progress-bar__wrap">
+                            <span class="progress-bar__text">Вопрос 9/9</span>
+                            <span class="progress-bar__score">0/22</span>
+                        </div>
+                        <svg class="progress-bar__icon" width="334" height="6" id="9" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-9"></use>
+                        </svg>
+                        <svg class="progress-bar__icon-light" width="334" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#progress-bar-9-light"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="question__desktop">
+                        <div class="question__desktop-left">
+                            <div class="question__mobile">
+                                <h2 class="question__title">Вы&nbsp;заказали такси через приложение. Водитель пишет:
+                                    &laquo;<span class="question__text-color">Отмените
+                                        заказ в&nbsp;приложении</span>, я&nbsp;всё равно вас отвезу. Оплатите переводом
+                                    на&nbsp;карту&nbsp;&mdash; так будет дешевле&raquo;. Что сделаете?
+                                </h2>
+                            </div>
+                            <h2 class="question__title question__title--desktop">Вы заказали такси через приложение.
+                                Водитель пишет:</h2>
+                            <img class="question__img-left" src="images/question/taxi.png"
+                                alt="Переписка с водителем такси" width="450" height="600">
+                            <img class="question__img-left question__img-left-light" src="images/question/taxi.png"
+                                alt="Переписка с водителем такси" width="450" height="600">
+                        </div>
+                        <div class="question__desktop-right">
+                            <span class="question__desktop-desc">Что сделаете?</span>
+                            <div class="question__answers">
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q9" id="q9_1"
+                                        value="Соглашусь: поездка та же, зато дешевле">
+                                    Соглашусь: поездка та&nbsp;же, зато дешевле
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q9" id="q9_2"
+                                        value="Спрошу водителя, почему нужно отменить заказ, и соглашусь, если объяснение покажется убедительным">
+                                    Спрошу водителя, почему нужно отменить
+                                    заказ,&nbsp;и&nbsp;соглашусь,&nbsp;если&nbsp;объяснение покажется убедительным
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q9" id="q9_3"
+                                        value="Откажусь отменять заказ и продолжу поездку только через приложение">
+                                    Откажусь отменять заказ&nbsp;и&nbsp;продолжу поездку только через приложение
+                                </label>
+                                <label class="question__answer btn">
+                                    <input type="radio" name="q9" id="q9_4"
+                                        value="Отменю заказ, но отправлю близкому номер машины и маршрут">
+                                    Отменю заказ,&nbsp;но&nbsp;отправлю близкому номер машины&nbsp;и&nbsp;маршрут
+                                </label>
+                            </div>
+                            <div class="question__check-wrap">
+                                <span class="question__check-text">
+                                    <svg class="question__check-icon" width="24" height="24" aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#check-text-icon"></use>
+                                    </svg>
+                                    Ответ можно изменить до&nbsp;проверки
+                                </span>
+                                <button class="question__check btn" type="button">Проверить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <div class="answer">
+                <div class="answer__wrap">
+                    <div class="answer__wrap-text">
+                        <img class="answer__img" src="images/answer/dangerous.png"
+                            data-dark-src="images/answer/dangerous.png"
+                            data-light-src="images/answer/dangerous-light.png" alt="Иконка опасности" width="70"
+                            height="70">
+                        <h3 class="answer__title">Coffee_Free</h3>
+                    </div>
+                    <p class="answer__text">Открытая сеть может быть настоящей, но вы этого не проверили. Лучше уточнить
+                        у
+                        сотрудника название официальной сети кафе и не игнорировать предупреждения браузера или системы.
+                    </p>
+                </div>
+                <div class="answer__wrap-desktop">
+                    <span class="answer__text-counter">+ 1 БАЛЛ</span>
+                    <button class="answer__btn btn">Продолжить</button>
+                </div>
+            </div>
+        </section>
+        <section class="result">
+            <div class="container">
+                <div class="header__container">
+                    <svg class="header__container-icon-musey" width="49" height="31" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#header-container-musey"></use>
+                    </svg>
+                    <div class="header__container-line"></div>
+                    <div class="header__container-wrap">
+                        <svg class="header__container-logo" width="94" height="22" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#bastion-logo-header"></use>
+                        </svg>
+                        <svg class="header__icon-skillbox" width="27" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#skillbox-icon"></use>
+                        </svg>
+                    </div>
+                    <a class="header__container-btn"
+                        href="https://cryptography-museum.ru/events/vystavka-kljuch-doverija-bezopasnost-v-epohu-vysokih-tehnologij"
+                        target="_blank">О выставке
+                        <svg class="header__btn-icon" width="25" height="15" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#header-container-btn"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="result__wrapper">
+                    <div class="result__inner">
+                        <div class="result__wrap">
+                            <p class="result__text-desktop">ваш результат</p>
+                            <span class="result__number"><span class="result__number-color">0</span>/22</span>
+                            <span class="result__text"></span>
+                        </div>
+                        <p class="result__desc"></p>
+                        <p class="result__desc-mobile">Обратите внимание на&nbsp;рекомендации из&nbsp;игры&nbsp;&mdash;
+                            они помогут укрепить защищенность ваших данных.</p>
+                        <div class="result__procent result__procent--mobile"></div>
+                        <div class="result__wrap-btn">
+                            <button class="result__btn result__btn--color btn">Далее</button>
+                            <button class="result__btn btn">Пройти еще раз</button>
+                        </div>
+                    </div>
+                    <div class="result__procent result__procent--desktop"></div>
+                </div>
+            </div>
+        </section>
+        <section class="profile">
+            <div class="container">
+                <div class="header__container">
+                    <svg class="header__container-icon-musey" width="49" height="31" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#header-container-musey"></use>
+                    </svg>
+                    <div class="header__container-line"></div>
+                    <div class="header__container-wrap">
+                        <svg class="header__container-logo" width="94" height="22" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#bastion-logo-header"></use>
+                        </svg>
+                        <svg class="header__icon-skillbox" width="27" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#skillbox-icon"></use>
+                        </svg>
+                    </div>
+                    <a class="header__container-btn"
+                        href="https://cryptography-museum.ru/events/vystavka-kljuch-doverija-bezopasnost-v-epohu-vysokih-tehnologij"
+                        target="_blank">О выставке
+                        <svg class="header__btn-icon" width="25" height="15" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#header-container-btn"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="profile__wrapper">
+                    <h2 class="profile__title-desktop">Нужна цифровая прокачка</h2>
+                    <div class="profile__wrap-desktop">
+                        <picture class="profile__picture">
+                            <source class="profile__source-desktop" media="(min-width: 1440px)"
+                                srcset="images/profile/profile-desktop-1.png">
+                            <img class="profile__img" src="images/profile/profile-mobile.png"
+                                srcset="images/profile/profile-mobile.png 1x, images/profile/profile-mobile@2x.png 2x"
+                                data-dark-src="images/profile/profile-mobile.png"
+                                data-dark-srcset="images/profile/profile-mobile.png 1x, images/profile/profile-mobile@2x.png 2x"
+                                data-light-src="images/profile/profile-mobile-light.png"
+                                data-light-srcset="images/profile/profile-mobile-light.png 1x, images/profile/profile-mobile-light@2x.png 2x"
+                                alt="Картинка сильных сторон" width="150" height="185">
+                        </picture>
+                        <div class="profile__inner">
+                            <div class="profile__wrap">
+                                <div class="profile__wrap-text">
+                                    <h2 class="profile__title">Сильная сторона</h2>
+                                    <p class="profile__text profile__text--strong"></p>
+                                </div>
+                                <div class="profile__wrap-text">
+                                    <h2 class="profile__title">Зона внимания</h2>
+                                    <p class="profile__text profile__text--attention"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile__actions">
+                        <button class="profile__btn profile__btn--retry btn">Пройти ещё раз</button>
+                        <button class="profile__btn profile__btn--next btn">Далее</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="check-list">
+            <div class="container">
+                <div class="header__container">
+                    <svg class="header__container-icon-musey" width="49" height="31" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#header-container-musey"></use>
+                    </svg>
+                    <div class="header__container-line"></div>
+                    <div class="header__container-wrap">
+                        <svg class="header__container-logo" width="94" height="22" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#bastion-logo-header"></use>
+                        </svg>
+                        <svg class="header__icon-skillbox" width="27" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#skillbox-icon"></use>
+                        </svg>
+                    </div>
+                    <a class="header__container-btn"
+                        href="https://cryptography-museum.ru/events/vystavka-kljuch-doverija-bezopasnost-v-epohu-vysokih-tehnologij"
+                        target="_blank">О выставке
+                        <svg class="header__btn-icon" width="25" height="15" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#header-container-btn"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="check-list__inner">
+                    <h2 class="check-list__title">Чек-лист
+                        цифровой безопасности</h2>
+                    <ul class="check-list__list">
+                        <li class="check-list__item">
+                            <svg class="check-list__icon" width="40" height="40" aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#check-list-icon"></use>
+                            </svg>
+                            <p class="check-list__text">Проверяйте название публичной сети</p>
+                        </li>
+                        <li class="check-list__item">
+                            <svg class="check-list__icon" width="40" height="40" aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#check-list-icon"></use>
+                            </svg>
+                            <p class="check-list__text">Не передавайте коды из SMS
+                                и звонков</p>
+                        </li>
+                        <li class="check-list__item">
+                            <svg class="check-list__icon" width="40" height="40" aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#check-list-icon"></use>
+                            </svg>
+                            <p class="check-list__text">Проверяйте разрешения приложений</p>
+                        </li>
+                        <li class="check-list__item">
+                            <svg class="check-list__icon" width="40" height="40" aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#check-list-icon"></use>
+                            </svg>
+                            <p class="check-list__text">Используйте надёжные пароли</p>
+                        </li>
+                        <li class="check-list__item">
+                            <svg class="check-list__icon" width="40" height="40" aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#check-list-icon"></use>
+                            </svg>
+                            <p class="check-list__text">Не переходите по подозрительным ссылкам</p>
+                        </li>
+                        <li class="check-list__item">
+                            <svg class="check-list__icon" width="40" height="40" aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#check-list-icon"></use>
+                            </svg>
+                            <p class="check-list__text">Регулярно обновляйте устройства и приложения</p>
+                        </li>
+                    </ul>
+                    <div class="check-list__wrap">
+                        <svg class="check-list__icon" width="40" height="40" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#check-list-lock"></use>
+                        </svg>
+                        <p class="check-list__desc">Больше о&nbsp;цифровой безопасности&nbsp;&mdash;
+                            на&nbsp;выставке Музея криптографии &laquo;Ключ к&nbsp;доверию. Безопасность в&nbsp;эпоху
+                            высоких технологий&raquo;.
+                        </p>
+                        <button class="check-list__btn check-list__btn--desktop btn">О выставке</button>
+                    </div>
+                    <button class="check-list__btn check-list__btn--mobile btn">О выставке</button>
+                </div>
+            </div>
+        </section>
+        <section class="qr">
+            <div class="container">
+                <div class="header__container">
+                    <svg class="header__container-icon-musey" width="49" height="31" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#header-container-musey"></use>
+                    </svg>
+                    <div class="header__container-line"></div>
+                    <div class="header__container-wrap">
+                        <svg class="header__container-logo" width="94" height="22" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#bastion-logo-header"></use>
+                        </svg>
+                        <svg class="header__icon-skillbox" width="27" height="6" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#skillbox-icon"></use>
+                        </svg>
+                    </div>
+                    <a class="header__container-btn"
+                        href="https://cryptography-museum.ru/events/vystavka-kljuch-doverija-bezopasnost-v-epohu-vysokih-tehnologij"
+                        target="_blank">О выставке
+                        <svg class="header__btn-icon" width="25" height="15" aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#header-container-btn"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="qr__inner">
+                    <div class="qr__wrap-mobile">
+                        <h2 class="qr__title">Хотите узнать больше</h2>
+                        <p class="qr__text">Приходите на&nbsp;выставку &laquo;Ключ к&nbsp;доверию. Безопасность
+                            в&nbsp;эпоху высоких технологий&raquo; и&nbsp;узнайте, как защищают информацию от&nbsp;прошлых
+                            эпох до&nbsp;наших дней.</p>
+                        <img class="qr__img qr__img--mobile" src="images/QR.jpg" alt="">
+                        <span class="qr__adress">Москва, Ботаническая улица, 25с4</span>
+                        <span class="qr__adress">Музей криптографии</span>
+                        <a class="qr__btn"
+                            href="https://cryptography-museum.ru/events/vystavka-kljuch-doverija-bezopasnost-v-epohu-vysokih-tehnologij"
+                            target="_blank">Посетить выставку</a>
+                    </div>
+                    <div class="qr__wrap-img">
+                        <img class="qr__img qr__img--desktop" src="images/QR.jpg" alt="">
+                        <span class="qr__img-text">QR-код на скидку</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="script/results.js?v=4"></script>
+    <script src="script/script.js?v=8"></script>
+</body>
+
+</html>

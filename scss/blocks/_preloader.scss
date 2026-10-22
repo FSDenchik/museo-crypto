@@ -1,0 +1,145 @@
+.preloader {
+    background-color: $color-background;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+
+    // display: none;
+
+    &.is-hiding {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    &.is-hidden {
+        display: none;
+    }
+
+    &.light {
+        background-color: $color-background-light;
+
+        .preloader__line {
+            background-color: $color-dark-light;
+        }
+
+        .preloader__icon {
+            color: $color-white;
+        }
+
+        .preloader__icon-musey {
+            color: $color-dark-light;
+        }
+
+        .preloader__logo {
+            color: $color-dark-light;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        z-index: 2;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    &__line {
+        display: block;
+        width: 1px;
+        height: 46px;
+        background-color: $color-white;
+        z-index: 3;
+        margin-bottom: 4px;
+    }
+
+    &__icon-musey {
+        width: 85px;
+        height: 54px;
+        color: $color-white;
+    }
+
+    &__logo {
+        width: 162px;
+        height: 38px;
+        margin-left: 3px;
+        color: $color-white;
+    }
+
+    &__icon {
+        width: 100%;
+        height: 785px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+    }
+
+    &__wrap-desktop {
+        display: none;
+    }
+
+    &__wrap-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__img-mobile {
+        position: relative;
+        z-index: 3;
+        gap: 32px;
+    }
+
+    &__text {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 400;
+    }
+
+    &__wrap-mobile-icon {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    &__wrap-mobile-line {
+        height: 15px;
+        width: 1px;
+        background-color: #030405;
+    }
+
+    &__icon-bastion {
+        width: 55px;
+        height: 10px;
+    }
+
+    @include vp-1440 {
+        .preloader__wrap-mobile {
+            display: none;
+        }
+
+        .preloader__wrap-desktop {
+            display: block;
+        }
+
+        .preloader__image {
+            min-width: 1440px;
+            min-height: 900px;
+            width: 100vw;
+        }
+    }
+}

@@ -1,0 +1,236 @@
+.profile {
+    display: none;
+    background-color: $color-background;
+    height: 100vh;
+    padding: 40px 0 20px;
+    color: $color-white;
+
+    @include vp-1440 {
+        padding: 20px 0 20px;
+    }
+
+    &.is-active {
+        display: block;
+    }
+
+    &__wrapper {
+        padding: 24px 0 0 0;
+
+        @include vp-1440 {
+            padding: 0;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 0;
+    }
+
+    &__img {
+        margin: 0 auto 24px;
+
+        @include vp-1440 {
+            width: 500px;
+            height: 500px;
+            margin: 0;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        @include vp-1440 {
+            gap: 32px;
+            padding: 70px 0;
+        }
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        font-family: "Halvar Breit Rg", "Arial", sans-serif;
+        font-size: 16px;
+        line-height: 22px;
+        color: $color-blue;
+
+        @include vp-1440 {
+            font-size: 32px;
+            line-height: auto;
+            font-weight: 400;
+        }
+    }
+
+    &__text {
+        margin: 0;
+        font-size: 16px;
+        line-height: 20px;
+
+        @include vp-1440 {
+            font-size: 24px;
+            line-height: 40px;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: auto;
+
+        @include vp-1440 {
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+    }
+
+    &__btn {
+        padding: 17px 0;
+        text-align: center;
+        font-size: 16px;
+        line-height: 20px;
+        width: 100%;
+        min-height: 56px;
+        background-color: $color-blue;
+        color: $color-text-blue;
+        font-weight: 600;
+        margin-top: 0;
+
+        @include vp-1440 {
+            width: 326px;
+            text-transform: uppercase;
+            font-size: 24px;
+            line-height: 36px;
+            font-family: "Halvar Breit Rg", "Arial", sans-serif;
+            font-weight: 400;
+        }
+    }
+
+    &__btn--retry {
+        display: none;
+        background-color: transparent;
+        border: 1px solid $color-white;
+        color: $color-white;
+
+        @include vp-1440 {
+            display: block;
+        }
+    }
+
+    &__title-desktop {
+        font-size: 40px;
+        line-height: 48px;
+        font-weight: 400;
+        display: none;
+
+        @include vp-1440 {
+            display: block;
+            margin: 0 auto 60px;
+            text-transform: uppercase;
+            color: $color-blue;
+            text-align: center;
+            font-family: "Halvar Breit Rg", "Arial", sans-serif;
+            font-weight: 400;
+        }
+    }
+
+    &__wrap-desktop {
+        @include vp-1440 {
+            display: flex;
+            gap: 40px;
+        }
+    }
+
+    .header__container {
+        display: none;
+        margin-bottom: 20px;
+
+        @include vp-1440 {
+            display: flex;
+            background-color: $color-dark;
+        }
+    }
+}
+
+.profile {
+    >.container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__inner {
+        flex-grow: 1;
+        height: auto;
+        min-height: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .profile {
+        min-height: 100svh;
+        height: auto;
+        padding: 24px 0 12px;
+    }
+
+    .profile__img {
+        width: min(100%, 150px);
+        height: auto;
+        margin-bottom: 16px;
+    }
+
+    .profile__inner {
+        height: auto;
+    }
+
+    .profile > .container {
+        display: flex;
+        flex: 1;
+        min-height: 0;
+        height: auto;
+    }
+
+    .profile__wrap {
+        gap: 16px;
+    }
+
+    .profile__actions {
+        margin-top: 24px;
+    }
+
+    .profile__btn--retry {
+        display: none;
+    }
+}
+
+@media (max-width: 1439px) {
+    .profile.is-active {
+        display: flex;
+        flex-direction: column;
+        min-height: 100svh;
+        height: auto;
+        padding-bottom: max(12px, env(safe-area-inset-bottom));
+    }
+
+    .profile > .container {
+        flex: 1;
+        min-height: 0;
+        height: auto;
+    }
+}
+
+@include vp-1440 {
+    .profile {
+        background-color: $color-dark;
+    }
+}
