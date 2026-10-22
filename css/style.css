@@ -498,9 +498,11 @@ a {
     display: none;
   }
 }
-.header__icon-skillbox {
-  width: 60px;
-  height: 14px;
+@media (min-width: 1440px) {
+  .header__icon-skillbox {
+    width: 60px;
+    height: 14px;
+  }
 }
 
 @media (max-width: 1439px) {
@@ -1723,7 +1725,7 @@ a {
   }
   .question__item:not([data-question="3"]) .question__answers {
     gap: 24px;
-    margin: 72px 0 24px;
+    margin: 64px 0 24px;
   }
   .question__item:not([data-question="3"]) .question__answer {
     justify-content: flex-start;
@@ -1804,6 +1806,26 @@ a {
     transform: translateY(-55%);
   }
 }
+@media (min-width: 1440px) {
+  .question__item[data-question="1"] .question__desktop-left .question__title-color {
+    top: -25px;
+  }
+  .question__item[data-question="5"] .question__answers {
+    margin: 24px 0 0;
+  }
+  .question__item[data-question="6"] .question__answers {
+    margin: 24px 0 24px;
+  }
+  .question__item[data-question="7"] .question__answers {
+    margin: 24px 0 0;
+  }
+  .question__item[data-question="8"] .question__answers {
+    margin: 0;
+  }
+  .question__item[data-question="9"] .question__answers {
+    margin: 24px 0 0;
+  }
+}
 .question__title-color {
   color: #02CEFB;
 }
@@ -1867,9 +1889,6 @@ a {
   .question__help {
     display: flex;
     color: #22EE88;
-    font-family: "PIXY", Arial, sans-serif;
-    font-size: 64px;
-    line-height: 24px;
     border: 1px solid #22EE88;
     position: absolute;
     top: 150px;
@@ -1878,7 +1897,7 @@ a {
     height: 54px;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    z-index: 3;
   }
 }
 @media (min-width: 1440px) {
@@ -1937,6 +1956,14 @@ a {
   margin-top: 0;
 }
 
+.question__title--mobile {
+  display: block;
+}
+
+.question_title--desktop {
+  display: none;
+}
+
 @media (min-width: 1440px) {
   .question {
     background-color: #15141A;
@@ -1947,6 +1974,12 @@ a {
   .question__item[data-question="3"] .question__check {
     background-color: #22EE88;
     color: #15141A;
+  }
+  .question__title--mobile {
+    display: none;
+  }
+  .question_title--desktop {
+    display: block;
   }
 }
 .question__img-left-light {
@@ -2011,6 +2044,7 @@ a {
   color: #02CEFB;
   margin: 0 auto;
   text-transform: uppercase;
+  font-family: "Halvar Breit Rg", "Arial", sans-serif;
 }
 @media (min-width: 1440px) {
   .result__text {
@@ -2149,7 +2183,6 @@ a {
   height: 6px;
   overflow: hidden;
   background-color: #4C4C4C;
-  border-radius: 3px;
 }
 .result__procent-value {
   display: block;

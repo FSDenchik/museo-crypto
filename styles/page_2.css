@@ -1,0 +1,13 @@
+
+.mismatch-list {
+    border: 1px solid;
+    height: 175px;
+    padding: 20px
+}
+
+.message {
+    height: 25px;
+    padding: 5px;
+    margin-bottom: 10px
+}
+

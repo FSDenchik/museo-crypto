@@ -274,8 +274,7 @@
                                 <span>Wi-Fi-сетей. <span class="question__title-color">Какую вы выберете?</span></span>
                             </h2>
                             <p class="question__text">Сотрудник кафе сообщил, что гостевая сеть называется Coffee_Guest,
-                                а
-                                пароль указан на&nbsp;чеке.</p>
+                                а&nbsp;пароль указан на&nbsp;чеке.</p>
                             <img class="question__img-left" src="images/question/question-1-desktop.png"
                                 alt="Картинка выбора Wi-Fi-сетей" width="340" height="319">
                             <img class="question__img-left question__img-left-light"
@@ -391,9 +390,13 @@
                 </div>
                 <div class="container">
                     <div class="question__wrapper">
-                        <img class="question__img-monitor" src="images/question/Монитор.png" alt="Монитор" width="1013"
+                        <img class="question__img-monitor" src="images/question/Монитор.png" srcset="images/question/Монитор@2x.png 2x" alt="Монитор" width="1013"
                             height="745">
-                        <button class="question__help btn">?</button>
+                        <button class="question__help btn">
+                            <svg class="question__help-icon" width="25" height="32" aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#question-help-icon"></use>
+                            </svg>
+                        </button>
                         <div class="question__desktop-wrap">
                             <h2 class="question__container-title">помогите бабушке придумать надежный пароль</h2>
                             <div class="accordeon">
@@ -490,9 +493,9 @@
                         <div class="question__desktop-left">
                             <h2 class="question__title">В&nbsp;университете вы&nbsp;увидели объявление:
                                 &laquo;Бесплатный кофе
-                                всем студентам! <span class="">Отсканируйте QR-код</span> и&nbsp;авторизуйтесь для
+                                всем студентам! Отсканируйте QR&#8209;код и&nbsp;авторизуйтесь для
                                 получения купона&raquo;
-                                <span class="question__text-color">Как поступите?</span>
+                                <span class="question__title-color">Как поступите?</span>
                                 <svg class="question__title-icon" width="209" height="27" id="4" aria-hidden="true">
                                     <use xlink:href="images/sprite.svg#question-4-icon"></use>
                                 </svg>
@@ -566,11 +569,11 @@
                                     в&nbsp;ваш
                                     аккаунт
                                     с&nbsp;нового устройства.
-                                    <br>Если это были
+                                    Если это были
                                     не&nbsp;вы,
-                                    <span class="question__title-color">
+                                    <span class="question__text-color">
                                         срочно смените пароль
-                                        по&nbsp;ссылке</span>&raquo;. Вы&nbsp;не&nbsp;узнаёте этот вход. <br>Что
+                                        по&nbsp;ссылке</span>». Вы&nbsp;не&nbsp;узнаёте этот вход. <br>Что
                                     сделаете?
                                     <svg class="question__title-icon" width="202" height="25" id="5-1"
                                         aria-hidden="true">
@@ -645,7 +648,8 @@
                 <div class="container">
                     <div class="question__desktop">
                         <div class="question__desktop-left">
-                            <h2 class="question__title" id="title-6">Служба безопасности банка</h2>
+                            <h2 class="question__title question__title--mobile" id="title-6">Служба безопасности банка</h2>
+                            <h2 class="question__title question__title--desktop" id="title-6">Вам пришло уведомление:</h2>
                             <span class="question__text-number">+7 999 123 33 34</span>
                             <div class="question__dialog">
                                 <ul class="question__list">
@@ -723,6 +727,7 @@
                             </div>
                         </div>
                         <div class="question__desktop-right">
+                            <p class="question__desktop-text">Что сделаете?</p>
                             <div class="question__answers">
                                 <label class="question__answer btn">
                                     <input type="radio" name="q6" id="q6_1"
@@ -1185,7 +1190,7 @@
                 </div>
                 <div class="qr__inner">
                     <div class="qr__wrap-mobile">
-                        <h2 class="qr__title">Хотите узнать больше</h2>
+                        <h2 class="qr__title">Хотите узнать больше?</h2>
                         <p class="qr__text">Приходите на&nbsp;выставку &laquo;Ключ к&nbsp;доверию. Безопасность
                             в&nbsp;эпоху высоких технологий&raquo; и&nbsp;узнайте, как защищают информацию от&nbsp;прошлых
                             эпох до&nbsp;наших дней.</p>

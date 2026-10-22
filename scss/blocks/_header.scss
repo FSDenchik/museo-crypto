@@ -62,8 +62,10 @@
     }
 
     &__icon-skillbox {
-        width: 60px;
-        height: 14px;
+        @include vp-1440 {
+            width: 60px;
+            height: 14px;
+        }
     }
 }
 
@@ -76,6 +78,7 @@
 
 
 @include vp-1440 {
+
     // На экранах игры и итогов переключатель темы не показываем.
     body:has(.question.is-active, .result.is-active, .profile.is-active, .check-list.is-active, .qr.is-active) .header__btn-theme {
         display: none;

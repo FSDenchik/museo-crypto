@@ -1,0 +1,52 @@
+.start-banner {
+    width: 100%;
+    border: 1px solid $color-white;
+    z-index: 2;
+    position: relative;
+    color: $color-white;
+
+    &_text {
+        margin: 0;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    &_text-left {
+        background-color: $color-background;
+        width: 182px;
+        position: absolute;
+        left: -1px;
+        top: -7px;
+    }
+
+    &_title {
+        margin: 0 0 0 33px;
+        font-size: 44px;
+        line-height: 46px;
+        font-family: "HandjetFlowerDouble", "Arial", sans-serif;
+        margin-bottom: 8px;
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        justify-content: center;
+
+        margin: 42px auto 45px;
+
+        &-icon {
+            width: 10px;
+            height: 27px;
+        }
+    }
+
+    &_text-right {
+        background-color: $color-background;
+        position: absolute;
+        bottom: -3px;
+        right: -1px;
+        width: 150px;
+
+        .start-banner_text {
+            text-align: right;
+        }
+    }
+}
